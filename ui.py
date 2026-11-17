@@ -32,9 +32,8 @@ SKIP = ("Planned", "Station Notice", "Boarding Change", "Extra Service")  # aler
 events = []  # [{"name", "days", "start": (hh, mm), "from", "to", "line", "from_ids", "to_ids"}]
 
 
-def load_stations():  # also keeps the downloaded timetable for lateness()
-    global TIMETABLE
-    data = TIMETABLE = urllib.request.urlopen(STOPS_ZIP, timeout=60).read()
+def load_stations():
+    data = urllib.request.urlopen(STOPS_ZIP, timeout=60).read()
     stations = {}
     with zipfile.ZipFile(io.BytesIO(data)) as z:
         for r in csv.DictReader(io.TextIOWrapper(z.open("stops.txt"), "utf-8-sig")):
@@ -63,45 +62,18 @@ def fetch_alerts():
     return json.load(urllib.request.urlopen(ALERTS, timeout=10))
 
 
-def next_train(ev, now):
-    feed = fetch_feed(ev["line"])
-    best = None  # (predicted time, trip_id, start_date, stop_id) of the next train
-    for ent in feed.entity:
+def next_train(ev, now):  # the MTA's live time for the next train from From toward To, or None
+    best = None
+    for ent in fetch_feed(ev["line"]).entity:
         tu = ent.trip_update
         if not ent.HasField("trip_update") or tu.trip.route_id != ev["line"]:
             continue
-        stops = [(s.stop_id, s.departure.time or s.arrival.time) for s in tu.stop_time_update]
+        stops = [(s.stop_id[:-1], s.departure.time or s.arrival.time) for s in tu.stop_time_update]
         for i, (sid, ts) in enumerate(stops):
-            if (sid[:-1] in ev["from_ids"] and ts >= now.timestamp()
-                    and any(s[:-1] in ev["to_ids"] for s, _ in stops[i + 1:])):
-                if best is None or ts < best[0]:
-                    best = (ts, tu.trip.trip_id, tu.trip.start_date, sid)
+            if sid in ev["from_ids"] and ts >= now.timestamp() and any(s in ev["to_ids"] for s, _ in stops[i + 1:]):
+                best = ts if best is None else min(best, ts)
                 break
     return best
-
-
-def lateness(ts, trip_id, start_date, stop_id):  # minutes behind the MTA timetable, or None if not in it
-    sched = scheduled(trip_id, start_date, stop_id)
-    return None if sched is None else round((ts - sched) / 60)
-
-
-def scheduled(trip_id, start_date, stop_id):  # timetable time for this trip at this stop, or None
-    day = datetime.strptime(start_date, "%Y%m%d").replace(tzinfo=TZ)
-    weekday = day.strftime("%A").lower()
-    with zipfile.ZipFile(io.BytesIO(TIMETABLE)) as z:
-        read = lambda name: csv.DictReader(io.TextIOWrapper(z.open(name), "utf-8-sig"))
-        services = {r["service_id"] for r in read("calendar.txt")
-                    if r[weekday] == "1" and r["start_date"] <= start_date <= r["end_date"]}
-        trips = {r["trip_id"] for r in read("trips.txt")  # live ids may drop the timetable id's ending
-                 if r["service_id"] in services and f"_{trip_id}" in r["trip_id"]}
-        lines = io.TextIOWrapper(z.open("stop_times.txt"), "utf-8-sig")
-        cols = next(lines).strip().split(",")
-        for line in lines:
-            if f",{stop_id}," in line and line.split(",", 1)[0] in trips:
-                row = dict(zip(cols, line.strip().split(",")))
-                h, m, s = map(int, (row["departure_time"] or row["arrival_time"]).split(":"))
-                return day.timestamp() + h * 3600 + m * 60 + s
-    return None
 
 
 def delays(line, now):  # active unplanned MTA alerts (delays, suspensions, reroutes...) for this line
@@ -122,14 +94,11 @@ def delays(line, now):  # active unplanned MTA alerts (delays, suspensions, rero
 
 def check(ev, now):
     try:
-        nxt, found = next_train(ev, now), delays(ev["line"], now)
-        late = lateness(*nxt) if nxt else None
+        ts, found = next_train(ev, now), delays(ev["line"], now)
     except Exception as e:  # keep the background thread alive if the MTA can't be reached
         return f"couldn't reach the MTA ({e})"
-    if not nxt:
-        return f"{ev['from']} to {ev['to']}, no {ev['line']} trains found | " + (" | ".join(found) or "no delays reported")
-    vs = ("not in timetable" if late is None else f"{late} mins late vs timetable" if late >= 2 else "on time")
-    train = f"{ev['from']} to {ev['to']}, {ev['line']} in {int(nxt[0] - now.timestamp()) // 60} mins ({vs})"
+    train = (f"{ev['from']} to {ev['to']}, {ev['line']} in {int(ts - now.timestamp()) // 60} mins" if ts
+             else f"{ev['from']} to {ev['to']}, no {ev['line']} trains found")
     return f"{train} | " + (" | ".join(found) if found else f"no {ev['line']} delays reported")
 
 
