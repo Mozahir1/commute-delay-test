@@ -1,13 +1,13 @@
 # Delay check test
 
-Updated Tue Nov 17 00:15 NY time. First check Mon Nov 16 18:34.
+Updated Tue Nov 17 09:38 NY time. First check Mon Nov 16 18:34.
 
 ## Did the checks run?
 
 | | Count |
 |---|---|
-| Checks expected so far | 12 |
-| Checks that ran | 1 (8%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 23 |
+| Checks that ran | 1 (4%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
 | No train found | 0 |
 | Train not in timetable | 0 |
@@ -52,4 +52,5 @@ Updated Tue Nov 17 00:15 NY time. First check Mon Nov 16 18:34.
 
 | Ran | Event | Reported | Actually late |
 |---|---|---|---|
+| Tue 09:38 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 6 mins (on time) / no F delays reported | waiting |
 | Mon 18:42 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 7 mins (6 mins late vs timetable) / no A delays reported | 6 min |
