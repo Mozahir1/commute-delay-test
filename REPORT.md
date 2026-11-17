@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Tue Nov 17 18:34 NY time. First check Tue Nov 17 17:39.
+Updated Tue Nov 17 18:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 2 |
-| Checks that ran | 2 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 3 |
+| Checks that ran | 3 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **1 of 4 (25%)** |
+| **Checks with an MTA delay posted** | **2 of 5 (40%)** |
 
 ## By line
 
@@ -22,17 +22,20 @@ skipped stops, reduced service; planned work left out).
 | A | 1 | 0 |
 | E | 1 | 0 |
 | F | 1 | 1 |
+| L | 1 | 1 |
 
 ## Delays seen
 
 | First seen | Line | MTA alert |
 |---|---|---|
+| Tue 18:49 | L | DELAYS: 8 Av-bound [L] trains are running with delays after we removed a train with a door problem from service at 3 Av. |
 | Tue 18:32 | F | DELAYS: Coney island-bound [F] trains are running with delays after we removed a train in need of repairs from service at Kings Hwy. |
 
 ## Latest 20 checks
 
 | Ran | Event | Result |
 |---|---|---|
+| Tue 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 0 mins / DELAYS: 8 Av-bound [L] trains are running with delays after we removed a train with a door problem from service at 3 Av. |
 | Tue 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 3 mins / no A delays reported |
 | Tue 18:32 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 2 mins / DELAYS: Coney island-bound [F] trains are running with delays after we removed a train in need of repairs from service at Kings Hwy. |
 | Tue 18:08 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
