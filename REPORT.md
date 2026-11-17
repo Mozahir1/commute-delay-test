@@ -1,58 +1,35 @@
 # Delay check test
 
-Updated Tue Nov 17 17:38 NY time. First check Mon Nov 16 18:34.
+Updated Tue Nov 17 18:08 NY time. First check Tue Nov 17 17:39.
+
+Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
+skipped stops, reduced service; planned work left out).
 
 ## Did the checks run?
 
 | | Count |
 |---|---|
-| Checks expected so far | 36 |
-| Checks that ran | 2 (6%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 0 |
+| Checks that ran | 0 (-; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| No train found | 0 |
-| Train not in timetable | 0 |
-| Train has left, actual time known | 2 |
-
-## Reported vs actual lateness: all checks with a known outcome (2)
-
-| | Count |
-|---|---|
-| Reported late, actually late | 1 |
-| Reported late, actually on time (false alarm) | 0 |
-| Reported on time, actually late (missed) | 0 |
-| Reported on time, actually on time | 1 |
-| **Correct** | **100%** |
-| Departure-time error, median / worst | 0.0 / 0.0 min |
-
-## Reported vs actual lateness: only where the last reading was within 3 min of departure (0)
-
-| | Count |
-|---|---|
-| Reported late, actually late | 0 |
-| Reported late, actually on time (false alarm) | 0 |
-| Reported on time, actually late (missed) | 0 |
-| Reported on time, actually on time | 0 |
-| **Correct** | **-** |
-| Departure-time error | - |
-
-## MTA alerts vs actual lateness
-
-| | Checks | Actually late |
-|---|---|---|
-| MTA alert posted for the line | 0 | - |
-| No alert posted | 2 | 50% |
+| **Checks with an MTA delay posted** | **0 of 2 (0%)** |
 
 ## By line
 
-| Line | Checks | Avg reported late | Avg actual late | Correct |
-|---|---|---|---|---|
-| A | 1 | 6.0 min | 6.0 min | 100% |
-| F | 1 | -3.0 min | -3.0 min | 100% |
+| Line | Checks | With a delay posted |
+|---|---|---|
+| 6 | 1 | 0 |
+| E | 1 | 0 |
+
+## Delays seen
+
+| First seen | Line | MTA alert |
+|---|---|---|
+| - | - | none yet |
 
 ## Latest 20 checks
 
-| Ran | Event | Reported | Actually late |
-|---|---|---|---|
-| Tue 17:38 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 0 mins (on time) / no 7 delays reported | waiting |
-| Tue 09:38 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 6 mins (on time) / no F delays reported | -3 min |
-| Mon 18:42 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 7 mins (6 mins late vs timetable) / no A delays reported | 6 min |
+| Ran | Event | Result |
+|---|---|---|
+| Tue 18:08 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
+| Tue 18:08 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 4 mins / no E delays reported |
