@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 09:19 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 09:54 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 26 |
-| Checks that ran | 26 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 27 |
+| Checks that ran | 27 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **6 of 27 (22%)** |
+| **Checks with an MTA delay posted** | **6 of 28 (21%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 4 | 0 |
 | F | 3 | 3 |
 | G | 2 | 0 |
-| L | 3 | 1 |
+| L | 4 | 1 |
 | N | 3 | 0 |
 | Q | 2 | 0 |
 
@@ -43,6 +43,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Wed 09:19 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / DELAYS: [F] trains are running with delays in both directions after we addressed a switch problem near Jay St-MetroTech. |
 | Wed 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
 | Wed 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 7 mins / no 6 delays reported |
@@ -62,4 +63,3 @@ skipped stops, reduced service; planned work left out).
 | Tue 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 4 mins / no 6 delays reported |
 | Tue 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
 | Tue 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
-| Tue 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
