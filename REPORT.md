@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 07:39 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 07:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 18 |
-| Checks that ran | 18 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 19 |
+| Checks that ran | 19 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **3 of 21 (14%)** |
+| **Checks with an MTA delay posted** | **4 of 22 (18%)** |
 
 ## By line
 
@@ -20,7 +20,7 @@ skipped stops, reduced service; planned work left out).
 |---|---|---|
 | 1 | 2 | 0 |
 | 6 | 2 | 0 |
-| 7 | 1 | 0 |
+| 7 | 2 | 1 |
 | A | 3 | 1 |
 | E | 3 | 0 |
 | F | 1 | 1 |
@@ -33,6 +33,7 @@ skipped stops, reduced service; planned work left out).
 
 | First seen | Line | MTA alert |
 |---|---|---|
+| Wed 07:49 | 7 | DELAYS: [7][7X] trains are running with delays in both directions while we address a mechanical problem on a train at 34 St-Hudson Yards. |
 | Wed 07:14 | A | SEVERE DELAYS: [A][C][F] trains are running with severe delays in both directions between Manhattan and Brooklyn after we addressed a switch problem near Jay St-Metr |
 | Tue 18:49 | L | DELAYS: 8 Av-bound [L] trains are running with delays after we removed a train with a door problem from service at 3 Av. |
 | Tue 18:32 | F | DELAYS: Coney island-bound [F] trains are running with delays after we removed a train in need of repairs from service at Kings Hwy. |
@@ -41,6 +42,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / DELAYS: [7][7X] trains are running with delays in both directions while we address a mechanical problem on a train at 34 St-Hudson Yards. |
 | Wed 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 3 mins / no N delays reported |
 | Wed 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Wed 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 2 mins / SEVERE DELAYS: [A][C][F] trains are running with severe delays in both directions between Manhattan and Brooklyn after we addressed a switch problem near Jay St-Metr |
@@ -60,4 +62,3 @@ skipped stops, reduced service; planned work left out).
 | Tue 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 0 mins / DELAYS: 8 Av-bound [L] trains are running with delays after we removed a train with a door problem from service at 3 Av. |
 | Tue 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 3 mins / no A delays reported |
 | Tue 18:32 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 2 mins / DELAYS: Coney island-bound [F] trains are running with delays after we removed a train in need of repairs from service at Kings Hwy. |
-| Tue 18:08 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
