@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 17:24 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 17:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 38 |
-| Checks that ran | 38 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 39 |
+| Checks that ran | 39 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **8 of 40 (20%)** |
+| **Checks with an MTA delay posted** | **8 of 41 (20%)** |
 
 ## By line
 
@@ -22,7 +22,7 @@ skipped stops, reduced service; planned work left out).
 | 6 | 4 | 1 |
 | 7 | 4 | 1 |
 | A | 4 | 2 |
-| E | 4 | 0 |
+| E | 5 | 0 |
 | F | 4 | 3 |
 | G | 4 | 0 |
 | L | 4 | 1 |
@@ -45,6 +45,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 6 mins / no E delays reported |
 | Wed 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 0 mins / no 7 delays reported |
 | Wed 17:04 | Q Atlantic Av-Barclays Ctr to Canal St 17:05 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / no Q delays reported |
 | Wed 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 2 mins / no 1 delays reported |
@@ -64,4 +65,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / no Q delays reported |
 | Wed 08:04 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:05 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 3 mins / DELAYS: [F] trains are running with delays in both directions after we addressed a switch problem near Jay St-MetroTech. |
 | Wed 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / DELAYS: [7][7X] trains are running with delays in both directions while we address a mechanical problem on a train at 34 St-Hudson Yards. |
-| Wed 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 3 mins / no N delays reported |
