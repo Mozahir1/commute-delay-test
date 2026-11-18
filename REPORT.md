@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 18:34 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 18:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 42 |
-| Checks that ran | 42 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 43 |
+| Checks that ran | 43 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **10 of 44 (23%)** |
+| **Checks with an MTA delay posted** | **11 of 45 (24%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 5 | 0 |
 | F | 5 | 4 |
 | G | 4 | 0 |
-| L | 4 | 1 |
+| L | 5 | 2 |
 | N | 4 | 0 |
 | Q | 4 | 0 |
 
@@ -33,6 +33,7 @@ skipped stops, reduced service; planned work left out).
 
 | First seen | Line | MTA alert |
 |---|---|---|
+| Wed 18:49 | L | DELAYS: [L] trains are running with delays in both directions after we moved a train that had its brakes activated near New Lots Av. |
 | Wed 18:09 | F | DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a mechanical problem on a train near Bergen St. |
 | Wed 17:54 | 6 | DELAYS: [6] trains are running with delays in both directions Pelham Bay Pk-bound [6X] trains are running with delays. |
 | Wed 13:39 | 6 | DELAYS: [6] trains are delayed entering/leaving Brooklyn Bridge-City Hall while we request EMS assistance for someone on a train at that station. |
@@ -47,6 +48,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 2 mins / DELAYS: [L] trains are running with delays in both directions after we moved a train that had its brakes activated near New Lots Av. |
 | Wed 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
 | Wed 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 1 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a mechanical problem on a train near Bergen St. |
 | Wed 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 5 mins / DELAYS: [6] trains are running with delays in both directions Pelham Bay Pk-bound [6X] trains are running with delays. |
@@ -66,4 +68,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Wed 09:19 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / DELAYS: [F] trains are running with delays in both directions after we addressed a switch problem near Jay St-MetroTech. |
 | Wed 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
-| Wed 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 7 mins / no 6 delays reported |
