@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 06:54 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 07:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 15 |
 | Checks that ran | 15 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **2 of 17 (12%)** |
+| **Checks with an MTA delay posted** | **2 of 18 (11%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 2 | 0 |
 | F | 1 | 1 |
 | G | 2 | 0 |
-| L | 2 | 1 |
+| L | 3 | 1 |
 | N | 2 | 0 |
 | Q | 1 | 0 |
 
@@ -40,6 +40,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
 | Wed 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Wed 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 0 mins / no 1 delays reported |
 | Tue 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 2 mins / no L delays reported |
