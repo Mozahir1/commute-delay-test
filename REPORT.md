@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 12:59 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 13:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,17 +9,17 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 32 |
-| Checks that ran | 32 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 33 |
+| Checks that ran | 33 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **7 of 33 (21%)** |
+| **Checks with an MTA delay posted** | **8 of 34 (24%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 3 | 0 |
-| 6 | 3 | 0 |
+| 6 | 4 | 1 |
 | 7 | 3 | 1 |
 | A | 4 | 2 |
 | E | 4 | 0 |
@@ -33,6 +33,7 @@ skipped stops, reduced service; planned work left out).
 
 | First seen | Line | MTA alert |
 |---|---|---|
+| Wed 13:39 | 6 | DELAYS: [6] trains are delayed entering/leaving Brooklyn Bridge-City Hall while we request EMS assistance for someone on a train at that station. |
 | Wed 10:29 | A | DELAYS: Downtown [A][C] trains are running with delays following multiple incidents along the lines. |
 | Wed 08:04 | F | DELAYS: [F] trains are running with delays in both directions after we addressed a switch problem near Jay St-MetroTech. |
 | Wed 07:49 | 7 | DELAYS: [7][7X] trains are running with delays in both directions while we address a mechanical problem on a train at 34 St-Hudson Yards. |
@@ -44,6 +45,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 2 mins / DELAYS: [6] trains are delayed entering/leaving Brooklyn Bridge-City Hall while we request EMS assistance for someone on a train at that station. |
 | Wed 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Wed 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Wed 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
@@ -63,4 +65,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Wed 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 0 mins / no 1 delays reported |
 | Tue 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 2 mins / no L delays reported |
-| Tue 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 3 mins / no 1 delays reported |
