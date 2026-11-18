@@ -36,3 +36,4 @@
 {"event": "N Queensboro Plaza to Times Sq-42 St 15:20", "line": "N", "due": "2026-11-18T15:19:00-05:00", "ran": "2026-11-18T15:19:03-05:00", "alerts": [], "message": "Queensboro Plaza to Times Sq-42 St, N in 5 mins | no N delays reported"}
 {"event": "G Court Sq to Metropolitan Av 16:30", "line": "G", "due": "2026-11-18T16:29:00-05:00", "ran": "2026-11-18T16:29:05-05:00", "alerts": [], "message": "Court Sq to Metropolitan Av, G in 2 mins | no G delays reported"}
 {"event": "1 96 St to Times Sq-42 St 16:55", "line": "1", "due": "2026-11-18T16:54:00-05:00", "ran": "2026-11-18T16:54:23-05:00", "alerts": [], "message": "96 St to Times Sq-42 St, 1 in 2 mins | no 1 delays reported"}
+{"event": "Q Atlantic Av-Barclays Ctr to Canal St 17:05", "line": "Q", "due": "2026-11-18T17:04:00-05:00", "ran": "2026-11-18T17:04:26-05:00", "alerts": [], "message": "Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins | no Q delays reported"}
