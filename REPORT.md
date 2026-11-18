@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Tue Nov 17 21:19 NY time. First check Tue Nov 17 17:39.
+Updated Tue Nov 17 21:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,16 +9,16 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 9 |
-| Checks that ran | 9 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 10 |
+| Checks that ran | 10 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **2 of 10 (20%)** |
+| **Checks with an MTA delay posted** | **2 of 11 (18%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 6 | 1 | 0 |
+| 6 | 2 | 0 |
 | 7 | 1 | 0 |
 | A | 2 | 0 |
 | E | 1 | 0 |
@@ -39,6 +39,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Tue 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 4 mins / no 6 delays reported |
 | Tue 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
 | Tue 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Tue 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
