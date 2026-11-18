@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Tue Nov 17 19:44 NY time. First check Tue Nov 17 17:39.
+Updated Tue Nov 17 20:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 6 |
 | Checks that ran | 6 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **2 of 7 (29%)** |
+| **Checks with an MTA delay posted** | **2 of 8 (25%)** |
 
 ## By line
 
@@ -22,6 +22,7 @@ skipped stops, reduced service; planned work left out).
 | A | 1 | 0 |
 | E | 1 | 0 |
 | F | 1 | 1 |
+| G | 1 | 0 |
 | L | 1 | 1 |
 | N | 1 | 0 |
 | Q | 1 | 0 |
@@ -37,6 +38,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Tue 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Tue 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / no Q delays reported |
 | Tue 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 9 mins / no N delays reported |
 | Tue 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 0 mins / DELAYS: 8 Av-bound [L] trains are running with delays after we removed a train with a door problem from service at 3 Av. |
