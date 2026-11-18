@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 12:29 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 12:59 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 30 |
-| Checks that ran | 30 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 32 |
+| Checks that ran | 32 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **7 of 32 (22%)** |
+| **Checks with an MTA delay posted** | **7 of 33 (21%)** |
 
 ## By line
 
@@ -23,7 +23,7 @@ skipped stops, reduced service; planned work left out).
 | 7 | 3 | 1 |
 | A | 4 | 2 |
 | E | 4 | 0 |
-| F | 3 | 3 |
+| F | 4 | 3 |
 | G | 3 | 0 |
 | L | 4 | 1 |
 | N | 3 | 0 |
@@ -44,6 +44,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Wed 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Wed 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Wed 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 6 mins / no 1 delays reported |
@@ -63,4 +64,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 0 mins / no 1 delays reported |
 | Tue 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 2 mins / no L delays reported |
 | Tue 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 3 mins / no 1 delays reported |
-| Tue 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
