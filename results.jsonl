@@ -10,3 +10,4 @@
 {"event": "A 125 St to 59 St-Columbus Circle 21:20", "line": "A", "due": "2026-11-17T21:19:00-05:00", "ran": "2026-11-17T21:19:18-05:00", "alerts": [], "message": "125 St to 59 St-Columbus Circle, A in 4 mins | no A delays reported"}
 {"event": "6 86 St to Grand Central-42 St 21:50", "line": "6", "due": "2026-11-17T21:49:00-05:00", "ran": "2026-11-17T21:49:20-05:00", "alerts": [], "message": "86 St to Grand Central-42 St, 6 in 4 mins | no 6 delays reported"}
 {"event": "E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15", "line": "E", "due": "2026-11-17T22:14:00-05:00", "ran": "2026-11-17T22:14:23-05:00", "alerts": [], "message": "Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 9 mins | no E delays reported"}
+{"event": "N Queensboro Plaza to Times Sq-42 St 22:45", "line": "N", "due": "2026-11-17T22:44:00-05:00", "ran": "2026-11-17T22:44:26-05:00", "alerts": [], "message": "Queensboro Plaza to Times Sq-42 St, N in 0 mins | no N delays reported"}

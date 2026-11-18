@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Tue Nov 17 22:14 NY time. First check Tue Nov 17 17:39.
+Updated Tue Nov 17 22:44 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 10 |
-| Checks that ran | 10 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 12 |
+| Checks that ran | 12 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **2 of 12 (17%)** |
+| **Checks with an MTA delay posted** | **2 of 13 (15%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | F | 1 | 1 |
 | G | 1 | 0 |
 | L | 1 | 1 |
-| N | 1 | 0 |
+| N | 2 | 0 |
 | Q | 1 | 0 |
 
 ## Delays seen
@@ -39,6 +39,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Tue 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Tue 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 9 mins / no E delays reported |
 | Tue 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 4 mins / no 6 delays reported |
 | Tue 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
