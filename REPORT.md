@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Tue Nov 17 23:04 NY time. First check Tue Nov 17 17:39.
+Updated Tue Nov 17 23:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 12 |
-| Checks that ran | 12 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 14 |
+| Checks that ran | 14 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **2 of 14 (14%)** |
+| **Checks with an MTA delay posted** | **2 of 15 (13%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 2 | 0 |
 | F | 1 | 1 |
 | G | 1 | 0 |
-| L | 1 | 1 |
+| L | 2 | 1 |
 | N | 2 | 0 |
 | Q | 1 | 0 |
 
@@ -40,6 +40,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Tue 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 2 mins / no L delays reported |
 | Tue 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 3 mins / no 1 delays reported |
 | Tue 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Tue 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 9 mins / no E delays reported |
