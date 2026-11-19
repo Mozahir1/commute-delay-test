@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 22:44 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 23:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,13 +12,13 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 52 |
 | Checks that ran | 52 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **13 of 53 (25%)** |
+| **Checks with an MTA delay posted** | **13 of 54 (24%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 4 | 0 |
+| 1 | 5 | 0 |
 | 6 | 6 | 2 |
 | 7 | 5 | 1 |
 | A | 6 | 2 |
@@ -50,6 +50,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 8 mins / no 1 delays reported |
 | Wed 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 8 mins / no N delays reported |
 | Wed 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Wed 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 5 mins / no 6 delays reported |
@@ -69,4 +70,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 2 mins / no G delays reported |
 | Wed 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 5 mins / no N delays reported |
 | Wed 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / no Q delays reported |
-| Wed 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 2 mins / DELAYS: [6] trains are delayed entering/leaving Brooklyn Bridge-City Hall while we request EMS assistance for someone on a train at that station. |
