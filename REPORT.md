@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 16:29 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 16:54 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,13 +12,13 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 76 |
 | Checks that ran | 76 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **16 of 77 (21%)** |
+| **Checks with an MTA delay posted** | **16 of 78 (21%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 7 | 0 |
+| 1 | 8 | 0 |
 | 6 | 8 | 2 |
 | 7 | 7 | 1 |
 | A | 8 | 2 |
@@ -56,6 +56,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 2 mins / no 1 delays reported |
 | Thu 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 2 mins / no G delays reported |
 | Thu 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 13 mins / no N delays reported |
 | Thu 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / STOPS SKIPPED: Uptown [Q] trains are running express from Kings Hwy to Prospect Park while FDNY extinguishes a track fire near Parkside Av. |
@@ -75,4 +76,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Thu 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Thu 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 3 mins / no A delays reported |
-| Thu 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 2 mins / DELAYS: [L] trains are running with delays in both directions after we investigated what caused a train's brakes to activate near 1 Av. |
