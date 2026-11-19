@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 11:09 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 12:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 69 |
-| Checks that ran | 69 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 70 |
+| Checks that ran | 70 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **14 of 70 (20%)** |
+| **Checks with an MTA delay posted** | **14 of 71 (20%)** |
 
 ## By line
 
@@ -24,7 +24,7 @@ skipped stops, reduced service; planned work left out).
 | A | 8 | 2 |
 | E | 8 | 0 |
 | F | 7 | 4 |
-| G | 6 | 0 |
+| G | 7 | 0 |
 | L | 8 | 3 |
 | N | 7 | 1 |
 | Q | 6 | 1 |
@@ -54,6 +54,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Thu 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 4 mins / no 1 delays reported |
 | Thu 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
 | Thu 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 0 mins / no L delays reported |
@@ -73,4 +74,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Wed 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 8 mins / no 1 delays reported |
 | Wed 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 8 mins / no N delays reported |
 | Wed 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
-| Wed 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 5 mins / no 6 delays reported |
