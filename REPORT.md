@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 21:19 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 21:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,17 +9,17 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 49 |
-| Checks that ran | 49 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 50 |
+| Checks that ran | 50 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **13 of 50 (26%)** |
+| **Checks with an MTA delay posted** | **13 of 51 (25%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 4 | 0 |
-| 6 | 5 | 2 |
+| 6 | 6 | 2 |
 | 7 | 5 | 1 |
 | A | 6 | 2 |
 | E | 5 | 0 |
@@ -50,6 +50,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 5 mins / no 6 delays reported |
 | Wed 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 2 mins / no A delays reported |
 | Wed 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Wed 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
@@ -69,4 +70,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 2 mins / DELAYS: [6] trains are delayed entering/leaving Brooklyn Bridge-City Hall while we request EMS assistance for someone on a train at that station. |
 | Wed 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Wed 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
-| Wed 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
