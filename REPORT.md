@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Wed Nov 18 20:09 NY time. First check Tue Nov 17 17:39.
+Updated Wed Nov 18 20:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 46 |
-| Checks that ran | 46 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 48 |
+| Checks that ran | 48 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **13 of 48 (27%)** |
+| **Checks with an MTA delay posted** | **13 of 49 (27%)** |
 
 ## By line
 
@@ -20,7 +20,7 @@ skipped stops, reduced service; planned work left out).
 |---|---|---|
 | 1 | 4 | 0 |
 | 6 | 5 | 2 |
-| 7 | 4 | 1 |
+| 7 | 5 | 1 |
 | A | 5 | 2 |
 | E | 5 | 0 |
 | F | 5 | 4 |
@@ -50,6 +50,7 @@ skipped stops, reduced service; planned work left out).
 
 | Ran | Event | Result |
 |---|---|---|
+| Wed 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Wed 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Wed 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 4 mins / DELAYS: [Q][R] trains are running with delays in both directions after we moved a train that had its brakes activated in the tunnel between Queens and Manhatt |
 | Wed 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 4 mins / PART SUSPENDED: No [N][W] trains between Queens and Manhattan. Some uptown [N] trains will end at 57 St/7 Av. Some uptown [W] trains will end at 96 St via the [Q]. |
@@ -69,4 +70,3 @@ skipped stops, reduced service; planned work left out).
 | Wed 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Wed 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Wed 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 6 mins / no 1 delays reported |
-| Wed 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 9 mins / DELAYS: Downtown [A][C] trains are running with delays following multiple incidents along the lines. |
