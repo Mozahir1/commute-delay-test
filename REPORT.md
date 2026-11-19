@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 12:59 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 13:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,17 +9,17 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 72 |
-| Checks that ran | 72 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 73 |
+| Checks that ran | 73 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **15 of 73 (21%)** |
+| **Checks with an MTA delay posted** | **15 of 74 (20%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 7 | 0 |
-| 6 | 7 | 2 |
+| 6 | 8 | 2 |
 | 7 | 7 | 1 |
 | A | 8 | 2 |
 | E | 8 | 0 |
@@ -55,6 +55,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 3 mins / no 6 delays reported |
 | Thu 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 3 mins / DELAYS: Coney Island-Stillwell Av-bound [F] and Church Av-bound [G] trains are running with delays after we moved a train that had its brakes activated at Chu |
 | Thu 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 0 mins / no 7 delays reported |
 | Thu 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
@@ -74,4 +75,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Thu 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 1 mins / no 1 delays reported |
 | Wed 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
-| Wed 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 8 mins / no 1 delays reported |
