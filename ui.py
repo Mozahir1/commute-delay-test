@@ -76,20 +76,27 @@ def next_train(ev, now):  # the MTA's live time for the next train from From tow
     return best
 
 
-def delays(line, now):  # active unplanned MTA alerts (delays, suspensions, reroutes...) for this line
-    data = fetch_alerts()
+def delay_alerts(line, now):  # active unplanned MTA alerts (delays, suspensions, reroutes...) for this line
     found, ts = [], now.timestamp()
-    for ent in data["entity"]:
+    for ent in fetch_alerts()["entity"]:
         a = ent["alert"]
-        kind = a.get("transit_realtime.mercury_alert", {}).get("alert_type", "")
+        mercury = a.get("transit_realtime.mercury_alert", {})
+        kind = mercury.get("alert_type", "")
         if kind.startswith(SKIP) or not any(ie.get("route_id") == line for ie in a.get("informed_entity", [])):
             continue
         periods = a.get("active_period", [])
         if periods and not any(int(p.get("start", 0)) <= ts and (not p.get("end") or ts <= int(p["end"])) for p in periods):
             continue
         text = next((t["text"] for t in a["header_text"]["translation"] if t["language"] == "en"), "")
-        found.append(f"{kind.upper()}: {' '.join(text.split())[:150]}")
+        parts = ent["id"].split(":")  # "lmm:alert:277048:26" -> MTA event id 277048 (as in the official archive)
+        found.append({"id": ent["id"], "event_id": parts[2] if parts[:2] == ["lmm", "alert"] else None,
+                      "kind": kind, "text": " ".join(text.split()),
+                      "created_at": mercury.get("created_at"), "updated_at": mercury.get("updated_at")})
     return found
+
+
+def delays(line, now):  # the same alerts as short lines of text
+    return [f"{a['kind'].upper()}: {a['text'][:150]}" for a in delay_alerts(line, now)]
 
 
 def check(ev, now):

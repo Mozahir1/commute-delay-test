@@ -36,6 +36,7 @@ def check(ev, now, due):
     rec = {"event": ev["name"], "line": ev["line"], "due": due.isoformat(), "ran": now.isoformat(timespec="seconds")}
     try:
         rec["alerts"] = ui.delays(ev["line"], now)
+        rec["alert_details"] = ui.delay_alerts(ev["line"], now)  # MTA ids and times, to match the official archive
         rec["message"] = ui.check(ev, now)
     except Exception as e:  # record the failure and keep going with the other events
         rec["error"] = str(e)

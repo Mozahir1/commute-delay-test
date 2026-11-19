@@ -55,13 +55,22 @@ def main():
     out += ["## By line\n", "| Line | Checks | With a delay posted |", "|---|---|---|"]
     out += [f"| {line} | {len(rows)} | {sum(bool(r.get('alerts')) for r in rows)} |" for line, rows in sorted(by_line.items())]
 
-    first_seen = {}
+    seen = {}  # one row per MTA alert: when we first saw it, its latest text, and links to check it
     for r in ok:
-        for a in r.get("alerts", []):
-            first_seen.setdefault((r["line"], a), r["ran"])
-    out += ["\n## Delays seen\n", "| First seen | Line | MTA alert |", "|---|---|---|"]
-    out += [f"| {datetime.fromisoformat(ran):%a %H:%M} | {line} | {a.replace('|', '/')} |"
-            for (line, a), ran in sorted(first_seen.items(), key=lambda x: x[1], reverse=True)] or ["| - | - | none yet |"]
+        for a in r.get("alert_details") or [{"id": t, "text": t} for t in r.get("alerts", [])]:  # older checks: text only
+            row = seen.setdefault(a.get("event_id") or a["id"], {"first": r["ran"], "lines": set(), **a})
+            row["lines"].add(r["line"])
+            row.update(text=a["text"], kind=a.get("kind"), updated_at=a.get("updated_at"))
+    mta_time = lambda t: f"{datetime.fromtimestamp(t, TZ):%a %H:%M}" if t else "-"
+    out += ["\n## Delays seen\n",
+            "Proof: [official MTA log](https://data.ny.gov/d/7kct-peq7) links fill in once the MTA publishes the",
+            "archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an alert only while it's active.\n",
+            "| First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |", "|---|---|---|---|---|---|"]
+    out += [f"| {datetime.fromisoformat(a['first']):%a %H:%M} | {', '.join(sorted(a['lines']))} | "
+            f"{a['kind'].upper() + ': ' if a.get('kind') else ''}{a['text'][:150].replace('|', '/')} | {a.get('event_id') or '-'} | "
+            f"{mta_time(a.get('created_at'))} | "
+            + (f"[record](https://data.ny.gov/resource/7kct-peq7.json?event_id={a['event_id']}) |" if a.get("event_id") else "- |")
+            for a in sorted(seen.values(), key=lambda a: a["first"], reverse=True)] or ["| - | - | none yet | - | - | - |"]
 
     out += ["\n## Latest 20 checks\n", "| Ran | Event | Result |", "|---|---|---|"]
     out += [f"| {datetime.fromisoformat(r['ran']):%a %H:%M} | {r['event']} | {(r.get('message') or r.get('error', '')).replace('|', '/')} |"
