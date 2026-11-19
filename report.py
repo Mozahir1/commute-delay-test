@@ -2,10 +2,12 @@
 import collections
 import csv
 import json
+import urllib.parse
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("America/New_York")
+LOG = "https://data.ny.gov/resource/7kct-peq7.json"  # official MTA service alerts archive (NY Open Data)
 DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 
@@ -22,6 +24,13 @@ def expected_checks(first_due, now):  # every check that should have run between
                 count += 1
         day += timedelta(days=1)
     return count
+
+
+def text_search(a):  # older checks saved no MTA id: find the alert in the official log by its opening words
+    day = datetime.fromisoformat(a["first"])
+    where = (f"starts_with(header, '{a['text'][:80].replace(chr(39), chr(39) * 2)}') AND date between "
+             f"'{day - timedelta(days=1):%Y-%m-%dT00:00:00}' and '{day + timedelta(days=1):%Y-%m-%dT23:59:59}'")
+    return f"{LOG}?{urllib.parse.urlencode({'$where': where})}"
 
 
 def pct(a, b):
@@ -57,7 +66,8 @@ def main():
 
     seen = {}  # one row per MTA alert: when we first saw it, its latest text, and links to check it
     for r in ok:
-        for a in r.get("alert_details") or [{"id": t, "text": t} for t in r.get("alerts", [])]:  # older checks: text only
+        older = [dict(zip(("kind", "text"), t.split(": ", 1)), id=t) for t in r.get("alerts", [])]  # text only
+        for a in r.get("alert_details") or older:
             row = seen.setdefault(a.get("event_id") or a["id"], {"first": r["ran"], "lines": set(), **a})
             row["lines"].add(r["line"])
             row.update(text=a["text"], kind=a.get("kind"), updated_at=a.get("updated_at"))
@@ -69,7 +79,7 @@ def main():
     out += [f"| {datetime.fromisoformat(a['first']):%a %H:%M} | {', '.join(sorted(a['lines']))} | "
             f"{a['kind'].upper() + ': ' if a.get('kind') else ''}{a['text'][:150].replace('|', '/')} | {a.get('event_id') or '-'} | "
             f"{mta_time(a.get('created_at'))} | "
-            + (f"[record](https://data.ny.gov/resource/7kct-peq7.json?event_id={a['event_id']}) |" if a.get("event_id") else "- |")
+            + (f"[record]({LOG}?event_id={a['event_id']}) |" if a.get("event_id") else f"[search by text]({text_search(a)}) |")
             for a in sorted(seen.values(), key=lambda a: a["first"], reverse=True)] or ["| - | - | none yet | - | - | - |"]
 
     out += ["\n## Latest 20 checks\n", "| Ran | Event | Result |", "|---|---|---|"]
