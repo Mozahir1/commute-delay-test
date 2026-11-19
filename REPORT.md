@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 17:54 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 18:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 80 |
-| Checks that ran | 80 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 81 |
+| Checks that ran | 81 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **16 of 82 (20%)** |
+| **Checks with an MTA delay posted** | **17 of 83 (20%)** |
 
 ## By line
 
@@ -23,7 +23,7 @@ skipped stops, reduced service; planned work left out).
 | 7 | 8 | 1 |
 | A | 8 | 2 |
 | E | 9 | 0 |
-| F | 8 | 5 |
+| F | 9 | 6 |
 | G | 8 | 0 |
 | L | 8 | 3 |
 | N | 8 | 1 |
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Thu 18:09 | F | DELAYS: [E][F] are running with delays in both directions after we addressed a door problem on a train at Jackson Heights-Roosevelt Av. | 277163 | Thu 17:53 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277163) |
 | Thu 14:14 | Q | STOPS SKIPPED: Uptown [Q] trains are running express from Kings Hwy to Prospect Park while FDNY extinguishes a track fire near Parkside Av. | 277127 | Thu 13:54 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277127) |
 | Thu 12:59 | F | DELAYS: Coney Island-Stillwell Av-bound [F] and Church Av-bound [G] trains are running with delays after we moved a train that had its brakes activated at Chu | 277121 | Thu 12:41 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277121) |
 | Thu 07:04 | L | DELAYS: [L] trains are running with delays in both directions after we investigated what caused a train's brakes to activate near 1 Av. | 277065 | Thu 06:04 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277065) |
@@ -56,6 +57,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 2 mins / DELAYS: [E][F] are running with delays in both directions after we addressed a door problem on a train at Jackson Heights-Roosevelt Av. |
 | Thu 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
 | Thu 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
 | Thu 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
@@ -75,4 +77,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
 | Thu 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
 | Thu 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 8 mins / no Q delays reported |
-| Thu 08:04 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:05 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
