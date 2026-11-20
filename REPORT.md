@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 16:29 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 16:54 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,13 +12,13 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 116 |
 | Checks that ran | 116 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **22 of 117 (19%)** |
+| **Checks with an MTA delay posted** | **22 of 118 (19%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 11 | 0 |
+| 1 | 12 | 0 |
 | 6 | 12 | 2 |
 | 7 | 11 | 2 |
 | A | 12 | 2 |
@@ -64,6 +64,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 3 mins / no 1 delays reported |
 | Fri 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 2 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a door problem on a train at Fort Hamilton Pkwy. |
 | Fri 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
 | Fri 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. |
@@ -83,4 +84,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Fri 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
-| Fri 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
