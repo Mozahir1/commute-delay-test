@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 14:14 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 15:19 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 114 |
-| Checks that ran | 114 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 115 |
+| Checks that ran | 115 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **21 of 115 (18%)** |
+| **Checks with an MTA delay posted** | **21 of 116 (18%)** |
 
 ## By line
 
@@ -26,7 +26,7 @@ skipped stops, reduced service; planned work left out).
 | F | 12 | 7 |
 | G | 11 | 0 |
 | L | 12 | 3 |
-| N | 11 | 1 |
+| N | 12 | 1 |
 | Q | 11 | 3 |
 
 ## Delays seen
@@ -63,6 +63,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
 | Fri 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. |
 | Fri 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 3 mins / no 6 delays reported |
 | Fri 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we safely moved crews into place to conduct maintenance near Smith-9 Sts / DELAYS: Coney Island-Stillwell Av-bound [F] trains are delayed while we conduct track maintenance at W 8 St-NY Aquarium. |
@@ -82,4 +83,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
 | Fri 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
 | Fri 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
-| Fri 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 10 mins / no 1 delays reported |
