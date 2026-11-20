@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 08:34 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 08:44 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 103 |
 | Checks that ran | 103 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **19 of 105 (18%)** |
+| **Checks with an MTA delay posted** | **19 of 106 (18%)** |
 
 ## By line
 
@@ -22,7 +22,7 @@ skipped stops, reduced service; planned work left out).
 | 6 | 11 | 2 |
 | 7 | 10 | 2 |
 | A | 11 | 2 |
-| E | 11 | 1 |
+| E | 12 | 1 |
 | F | 10 | 6 |
 | G | 10 | 0 |
 | L | 11 | 3 |
@@ -60,6 +60,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 5 mins / no 6 delays reported |
 | Fri 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / no Q delays reported |
 | Fri 08:04 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:05 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
@@ -79,4 +80,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Thu 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Thu 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 8 mins / no Q delays reported |
-| Thu 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
