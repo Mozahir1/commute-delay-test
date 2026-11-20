@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 17:54 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 18:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 120 |
-| Checks that ran | 120 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 121 |
+| Checks that ran | 121 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **23 of 122 (19%)** |
+| **Checks with an MTA delay posted** | **23 of 123 (19%)** |
 
 ## By line
 
@@ -23,7 +23,7 @@ skipped stops, reduced service; planned work left out).
 | 7 | 12 | 2 |
 | A | 12 | 2 |
 | E | 13 | 2 |
-| F | 12 | 7 |
+| F | 13 | 7 |
 | G | 12 | 1 |
 | L | 12 | 3 |
 | N | 12 | 1 |
@@ -65,6 +65,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Fri 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 4 mins / no 6 delays reported |
 | Fri 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / DELAYS: [B][D][E] trains are running with delays in both directions. Downtown [C] are running with delays. |
 | Fri 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
@@ -84,4 +85,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 5 mins / no 6 delays reported |
 | Fri 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / no Q delays reported |
-| Fri 08:04 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:05 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
