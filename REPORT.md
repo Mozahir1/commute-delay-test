@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 20:09 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 20:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 86 |
-| Checks that ran | 86 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 88 |
+| Checks that ran | 88 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **17 of 88 (19%)** |
+| **Checks with an MTA delay posted** | **17 of 89 (19%)** |
 
 ## By line
 
@@ -20,7 +20,7 @@ skipped stops, reduced service; planned work left out).
 |---|---|---|
 | 1 | 8 | 0 |
 | 6 | 9 | 2 |
-| 7 | 8 | 1 |
+| 7 | 9 | 1 |
 | A | 9 | 2 |
 | E | 9 | 0 |
 | F | 9 | 6 |
@@ -57,6 +57,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Thu 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Thu 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 8 mins / no Q delays reported |
 | Thu 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
@@ -76,4 +77,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 0 mins / no 7 delays reported |
 | Thu 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Thu 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 4 mins / no 1 delays reported |
-| Thu 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
