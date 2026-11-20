@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 15:19 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 16:29 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 115 |
-| Checks that ran | 115 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 116 |
+| Checks that ran | 116 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **21 of 116 (18%)** |
+| **Checks with an MTA delay posted** | **22 of 117 (19%)** |
 
 ## By line
 
@@ -24,7 +24,7 @@ skipped stops, reduced service; planned work left out).
 | A | 12 | 2 |
 | E | 12 | 1 |
 | F | 12 | 7 |
-| G | 11 | 0 |
+| G | 12 | 1 |
 | L | 12 | 3 |
 | N | 12 | 1 |
 | Q | 11 | 3 |
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Fri 16:29 | G | DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a door problem on a train at Fort Hamilton Pkwy. | 277332 | Fri 16:18 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277332) |
 | Fri 14:14 | Q | DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. | 277299 | Fri 11:58 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277299) |
 | Fri 12:59 | F | DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we safely moved crews into place to conduct maintenance near Smith-9 Sts | 277302 | Fri 12:27 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277302) |
 | Fri 12:59 | F | DELAYS: Coney Island-Stillwell Av-bound [F] trains are delayed while we conduct track maintenance at W 8 St-NY Aquarium. | 277305 | Fri 12:45 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277305) |
@@ -63,6 +64,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 2 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a door problem on a train at Fort Hamilton Pkwy. |
 | Fri 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
 | Fri 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. |
 | Fri 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 3 mins / no 6 delays reported |
@@ -82,4 +84,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
 | Fri 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
-| Fri 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
