@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Thu Nov 19 18:49 NY time. First check Tue Nov 17 17:39.
+Updated Thu Nov 19 19:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 83 |
-| Checks that ran | 83 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 84 |
+| Checks that ran | 84 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **17 of 85 (20%)** |
+| **Checks with an MTA delay posted** | **17 of 86 (20%)** |
 
 ## By line
 
@@ -26,7 +26,7 @@ skipped stops, reduced service; planned work left out).
 | F | 9 | 6 |
 | G | 8 | 0 |
 | L | 9 | 3 |
-| N | 8 | 1 |
+| N | 9 | 1 |
 | Q | 8 | 2 |
 
 ## Delays seen
@@ -57,6 +57,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Thu 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Thu 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Thu 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / no A delays reported |
 | Thu 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 2 mins / DELAYS: [E][F] are running with delays in both directions after we addressed a door problem on a train at Jackson Heights-Roosevelt Av. |
@@ -76,4 +77,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
 | Thu 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 0 mins / no L delays reported |
 | Thu 09:19 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 3 mins / no F delays reported |
-| Thu 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
