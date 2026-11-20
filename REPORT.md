@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 10:29 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 11:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,16 +9,16 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 108 |
-| Checks that ran | 108 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 109 |
+| Checks that ran | 109 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **19 of 109 (17%)** |
+| **Checks with an MTA delay posted** | **19 of 110 (17%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 10 | 0 |
+| 1 | 11 | 0 |
 | 6 | 11 | 2 |
 | 7 | 10 | 2 |
 | A | 12 | 2 |
@@ -60,6 +60,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / no 1 delays reported |
 | Fri 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 1 mins / no A delays reported |
 | Fri 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 0 mins / no L delays reported |
 | Fri 09:19 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 09:20 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
@@ -79,4 +80,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Thu 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 9 mins / DELAYS: Uptown [E] trains are running with delays while we perform track maintenance near 5 Av/53 St. / EXPRESS TO LOCAL: Jamaica-bound [E][F] trains are running local from Jackson Heights-Roosevelt Av to Forest Hills-71 Av. |
 | Thu 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
-| Thu 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 12 mins / no A delays reported |
