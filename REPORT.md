@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 08:04 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 08:19 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 100 |
-| Checks that ran | 100 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 102 |
+| Checks that ran | 102 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **19 of 103 (18%)** |
+| **Checks with an MTA delay posted** | **19 of 104 (18%)** |
 
 ## By line
 
@@ -27,7 +27,7 @@ skipped stops, reduced service; planned work left out).
 | G | 10 | 0 |
 | L | 11 | 3 |
 | N | 11 | 1 |
-| Q | 9 | 2 |
+| Q | 10 | 2 |
 
 ## Delays seen
 
@@ -60,6 +60,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 1 mins / no Q delays reported |
 | Fri 08:04 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:05 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Fri 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 0 mins / DELAYS: 34 St-Hudson Yards-bound [7][7X] trains are running with delays after NYPD responded to people being disruptive on a train at Junction Blvd. |
 | Fri 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
@@ -79,4 +80,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 8 mins / no Q delays reported |
 | Thu 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Thu 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
-| Thu 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / no A delays reported |
