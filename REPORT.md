@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 06:54 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 07:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 95 |
 | Checks that ran | 95 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **18 of 97 (19%)** |
+| **Checks with an MTA delay posted** | **18 of 98 (18%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 10 | 1 |
 | F | 9 | 6 |
 | G | 10 | 0 |
-| L | 10 | 3 |
+| L | 11 | 3 |
 | N | 10 | 1 |
 | Q | 9 | 2 |
 
@@ -59,6 +59,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
 | Fri 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
 | Fri 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 10 mins / no 1 delays reported |
 | Thu 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
@@ -78,4 +79,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
 | Thu 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Thu 17:04 | Q Atlantic Av-Barclays Ctr to Canal St 17:05 | Atlantic Av-Barclays Ctr to Canal St, Q in 0 mins / no Q delays reported |
-| Thu 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 2 mins / no 1 delays reported |
