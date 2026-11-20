@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 12:29 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 12:59 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 110 |
-| Checks that ran | 110 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 112 |
+| Checks that ran | 112 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **19 of 112 (17%)** |
+| **Checks with an MTA delay posted** | **20 of 113 (18%)** |
 
 ## By line
 
@@ -23,7 +23,7 @@ skipped stops, reduced service; planned work left out).
 | 7 | 11 | 2 |
 | A | 12 | 2 |
 | E | 12 | 1 |
-| F | 11 | 6 |
+| F | 12 | 7 |
 | G | 11 | 0 |
 | L | 12 | 3 |
 | N | 11 | 1 |
@@ -36,6 +36,8 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Fri 12:59 | F | DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we safely moved crews into place to conduct maintenance near Smith-9 Sts | 277302 | Fri 12:27 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277302) |
+| Fri 12:59 | F | DELAYS: Coney Island-Stillwell Av-bound [F] trains are delayed while we conduct track maintenance at W 8 St-NY Aquarium. | 277305 | Fri 12:45 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277305) |
 | Fri 07:49 | 7 | DELAYS: 34 St-Hudson Yards-bound [7][7X] trains are running with delays after NYPD responded to people being disruptive on a train at Junction Blvd. | 277263 | Fri 07:08 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277263) |
 | Thu 22:14 | E | DELAYS: Uptown [E] trains are running with delays while we perform track maintenance near 5 Av/53 St. | 277204 | Thu 21:04 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277204) |
 | Thu 22:14 | E | EXPRESS TO LOCAL: Jamaica-bound [E][F] trains are running local from Jackson Heights-Roosevelt Av to Forest Hills-71 Av. | 277210 | Thu 22:13 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277210) |
@@ -60,6 +62,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we safely moved crews into place to conduct maintenance near Smith-9 Sts / DELAYS: Coney Island-Stillwell Av-bound [F] trains are delayed while we conduct track maintenance at W 8 St-NY Aquarium. |
 | Fri 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Fri 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Fri 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / no 1 delays reported |
@@ -79,4 +82,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 10 mins / no 1 delays reported |
 | Thu 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Thu 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / no 1 delays reported |
-| Thu 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
