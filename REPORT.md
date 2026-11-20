@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 07:29 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 07:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 97 |
-| Checks that ran | 97 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 98 |
+| Checks that ran | 98 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **18 of 100 (18%)** |
+| **Checks with an MTA delay posted** | **18 of 101 (18%)** |
 
 ## By line
 
@@ -26,7 +26,7 @@ skipped stops, reduced service; planned work left out).
 | F | 9 | 6 |
 | G | 10 | 0 |
 | L | 11 | 3 |
-| N | 10 | 1 |
+| N | 11 | 1 |
 | Q | 9 | 2 |
 
 ## Delays seen
@@ -59,6 +59,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Fri 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 5 mins / no A delays reported |
 | Fri 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 4 mins / no L delays reported |
@@ -78,4 +79,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Thu 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / no A delays reported |
 | Thu 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 2 mins / DELAYS: [E][F] are running with delays in both directions after we addressed a door problem on a train at Jackson Heights-Roosevelt Av. |
 | Thu 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
-| Thu 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E delays reported |
