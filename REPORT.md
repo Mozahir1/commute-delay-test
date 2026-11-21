@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 08:19 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 08:34 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,14 +12,14 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 142 |
 | Checks that ran | 142 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **25 of 143 (17%)** |
+| **Checks with an MTA delay posted** | **25 of 144 (17%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 14 | 1 |
-| 6 | 14 | 2 |
+| 6 | 15 | 2 |
 | 7 | 14 | 2 |
 | A | 15 | 2 |
 | E | 15 | 2 |
@@ -67,6 +67,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
 | Sat 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 7 mins / no Q delays reported |
 | Sat 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
@@ -86,4 +87,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 9 mins / no Q delays reported |
 | Fri 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 0 mins / no N delays reported |
 | Fri 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 0 mins / no L delays reported |
-| Fri 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / no A delays reported |
