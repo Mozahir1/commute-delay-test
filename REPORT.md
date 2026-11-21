@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 07:14 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 07:29 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 136 |
-| Checks that ran | 136 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 137 |
+| Checks that ran | 137 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **25 of 139 (18%)** |
+| **Checks with an MTA delay posted** | **25 of 140 (18%)** |
 
 ## By line
 
@@ -22,7 +22,7 @@ skipped stops, reduced service; planned work left out).
 | 6 | 14 | 2 |
 | 7 | 13 | 2 |
 | A | 15 | 2 |
-| E | 14 | 2 |
+| E | 15 | 2 |
 | F | 13 | 7 |
 | G | 14 | 1 |
 | L | 15 | 3 |
@@ -67,6 +67,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 4 mins / no E delays reported |
 | Sat 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
 | Sat 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 2 mins / no L delays reported |
 | Sat 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 0 mins / no G delays reported |
@@ -86,4 +87,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 18:09 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 18:10 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / no F delays reported |
 | Fri 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 4 mins / no 6 delays reported |
 | Fri 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / DELAYS: [B][D][E] trains are running with delays in both directions. Downtown [C] are running with delays. |
-| Fri 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
