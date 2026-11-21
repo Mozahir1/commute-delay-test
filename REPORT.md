@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 10:29 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 11:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,16 +9,16 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 146 |
-| Checks that ran | 146 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 147 |
+| Checks that ran | 147 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **25 of 147 (17%)** |
+| **Checks with an MTA delay posted** | **26 of 148 (18%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 14 | 1 |
+| 1 | 15 | 2 |
 | 6 | 15 | 2 |
 | 7 | 14 | 2 |
 | A | 16 | 2 |
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Sat 11:09 | 1 | REDUCED SERVICE: [1] runs every 8 minutes | - | Thu 11:29 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B1%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
 | Sat 06:39 | 1 | INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl | - | Thu 10:31 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27Downtown+%5B1%5D+trains+are+stopping+at+116+St-Columbia+University%2C+Cathedral+Pkwy-1%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
 | Fri 22:44 | N | DELAYS: Downtown [N][R] trains are running with delays after we requested EMS for a person in need on a train at 57 St/7 Av. | 277367 | Fri 21:36 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277367) |
 | Fri 17:39 | E | DELAYS: [B][D][E] trains are running with delays in both directions. Downtown [C] are running with delays. | 277320 | Fri 15:23 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277320) |
@@ -67,6 +68,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
 | Sat 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
 | Sat 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Sat 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
@@ -86,4 +88,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
 | Fri 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
 | Fri 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
-| Fri 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 5 mins / no G delays reported |
