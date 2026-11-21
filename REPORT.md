@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 21:49 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 22:14 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 130 |
 | Checks that ran | 130 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **23 of 131 (18%)** |
+| **Checks with an MTA delay posted** | **23 of 132 (17%)** |
 
 ## By line
 
@@ -22,7 +22,7 @@ skipped stops, reduced service; planned work left out).
 | 6 | 14 | 2 |
 | 7 | 13 | 2 |
 | A | 14 | 2 |
-| E | 13 | 2 |
+| E | 14 | 2 |
 | F | 13 | 7 |
 | G | 13 | 1 |
 | L | 13 | 3 |
@@ -65,6 +65,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
 | Fri 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 4 mins / no A delays reported |
 | Fri 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
@@ -84,4 +85,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. |
 | Fri 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 3 mins / no 6 delays reported |
 | Fri 12:59 | F Jackson Hts-Roosevelt Av to Lexington Av/53 St 13:00 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, F in 0 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we safely moved crews into place to conduct maintenance near Smith-9 Sts / DELAYS: Coney Island-Stillwell Av-bound [F] trains are delayed while we conduct track maintenance at W 8 St-NY Aquarium. |
-| Fri 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
