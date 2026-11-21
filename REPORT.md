@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 13:39 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 14:14 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 150 |
-| Checks that ran | 150 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 151 |
+| Checks that ran | 151 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **27 of 151 (18%)** |
+| **Checks with an MTA delay posted** | **27 of 152 (18%)** |
 
 ## By line
 
@@ -27,7 +27,7 @@ skipped stops, reduced service; planned work left out).
 | G | 15 | 1 |
 | L | 16 | 3 |
 | N | 15 | 2 |
-| Q | 14 | 3 |
+| Q | 15 | 3 |
 
 ## Delays seen
 
@@ -69,6 +69,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 2 mins / no Q delays reported |
 | Sat 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 1 mins / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sat 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Sat 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
@@ -88,4 +89,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 0 mins / no L delays reported |
 | Fri 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / no 1 delays reported |
 | Fri 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 19 mins / DELAYS: Downtown [N][R] trains are running with delays after we requested EMS for a person in need on a train at 57 St/7 Av. |
-| Fri 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
