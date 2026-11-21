@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 17:54 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 18:34 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 157 |
-| Checks that ran | 157 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 159 |
+| Checks that ran | 159 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **30 of 159 (19%)** |
+| **Checks with an MTA delay posted** | **31 of 160 (19%)** |
 
 ## By line
 
@@ -21,7 +21,7 @@ skipped stops, reduced service; planned work left out).
 | 1 | 16 | 3 |
 | 6 | 17 | 4 |
 | 7 | 16 | 2 |
-| A | 16 | 2 |
+| A | 17 | 3 |
 | E | 17 | 2 |
 | F | 13 | 7 |
 | G | 16 | 2 |
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Sat 18:34 | A | DELAYS: Downtown [A][C][D] trains are delayed while we investigate what caused a train's brakes to activate at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
 | Sat 16:29 | G | DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. | 277436 | Sat 14:37 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277436) |
 | Sat 13:39 | 6 | REDUCED SERVICE: [6] runs every 8 minutes | - | Fri 12:23 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B6%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
 | Sat 11:09 | 1 | REDUCED SERVICE: [1] runs every 8 minutes | - | Thu 11:29 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B1%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
@@ -70,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / DELAYS: Downtown [A][C][D] trains are delayed while we investigate what caused a train's brakes to activate at 59 St-Columbus Circle. |
 | Sat 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 0 mins / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sat 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 7 mins / no E delays reported |
 | Sat 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 4 mins / no 7 delays reported |
@@ -89,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 7 mins / no Q delays reported |
 | Sat 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
-| Sat 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 4 mins / no E delays reported |
