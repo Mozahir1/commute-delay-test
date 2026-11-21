@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Fri Nov 20 22:44 NY time. First check Tue Nov 17 17:39.
+Updated Fri Nov 20 23:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,13 +12,13 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 132 |
 | Checks that ran | 132 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **24 of 133 (18%)** |
+| **Checks with an MTA delay posted** | **24 of 134 (18%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 12 | 0 |
+| 1 | 13 | 0 |
 | 6 | 14 | 2 |
 | 7 | 13 | 2 |
 | A | 14 | 2 |
@@ -66,6 +66,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Fri 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / no 1 delays reported |
 | Fri 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 19 mins / DELAYS: Downtown [N][R] trains are running with delays after we requested EMS for a person in need on a train at 57 St/7 Av. |
 | Fri 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 0 mins / no E delays reported |
 | Fri 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 1 mins / no 6 delays reported |
@@ -85,4 +86,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Fri 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 2 mins / DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a door problem on a train at Fort Hamilton Pkwy. |
 | Fri 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 6 mins / no N delays reported |
 | Fri 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 3 mins / DELAYS: [B][Q] trains are running with delays in both directions after we conducted track maintenance in Brooklyn. |
-| Fri 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 3 mins / no 6 delays reported |
