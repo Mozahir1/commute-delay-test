@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 23:04 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 23:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 168 |
-| Checks that ran | 168 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 170 |
+| Checks that ran | 170 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **33 of 170 (19%)** |
+| **Checks with an MTA delay posted** | **34 of 171 (20%)** |
 
 ## By line
 
@@ -25,7 +25,7 @@ skipped stops, reduced service; planned work left out).
 | E | 18 | 2 |
 | F | 13 | 7 |
 | G | 17 | 2 |
-| L | 17 | 3 |
+| L | 18 | 4 |
 | N | 18 | 2 |
 | Q | 17 | 3 |
 
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Sat 23:39 | L | DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. | 277469 | Sat 22:58 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277469) |
 | Sat 18:34 | A | DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
 | Sat 16:29 | G | DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. | 277436 | Sat 14:37 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277436) |
 | Sat 13:39 | 6 | REDUCED SERVICE: [6] runs every 8 minutes | - | Fri 12:23 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B6%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
@@ -71,6 +72,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 5 mins / DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. |
 | Sat 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Sat 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
@@ -90,4 +92,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 3 mins / DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. |
 | Sat 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Sat 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 2 mins / no Q delays reported |
-| Sat 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 1 mins / REDUCED SERVICE: [6] runs every 8 minutes |
