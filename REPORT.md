@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 20:09 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 20:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 162 |
-| Checks that ran | 162 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 164 |
+| Checks that ran | 164 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **31 of 164 (19%)** |
+| **Checks with an MTA delay posted** | **31 of 165 (19%)** |
 
 ## By line
 
@@ -20,7 +20,7 @@ skipped stops, reduced service; planned work left out).
 |---|---|---|
 | 1 | 16 | 3 |
 | 6 | 17 | 4 |
-| 7 | 16 | 2 |
+| 7 | 17 | 2 |
 | A | 17 | 3 |
 | E | 17 | 2 |
 | F | 13 | 7 |
@@ -71,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 7 mins / no G delays reported |
 | Sat 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 0 mins / no Q delays reported |
 | Sat 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 4 mins / no N delays reported |
@@ -90,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
 | Sat 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
 | Sat 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
-| Sat 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
