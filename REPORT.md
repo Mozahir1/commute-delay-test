@@ -1,6 +1,6 @@
 # Commute alert test
 
-Updated Sun Nov 22 17:37 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 17:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records every MTA alert that could change the trip: delays, planned work and any other
 service change on the line. Early checks in this test recorded delays only.
@@ -12,7 +12,7 @@ service change on the line. Early checks in this test recorded delays only.
 | Checks expected so far | 192 |
 | Checks that ran | 192 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA alert posted** | **40 of 193 (21%)** |
+| **Checks with an MTA alert posted** | **40 of 194 (21%)** |
 
 ## By line
 
@@ -22,7 +22,7 @@ service change on the line. Early checks in this test recorded delays only.
 | 6 | 20 | 5 |
 | 7 | 20 | 3 |
 | A | 20 | 5 |
-| E | 20 | 2 |
+| E | 21 | 2 |
 | F | 13 | 7 |
 | G | 20 | 2 |
 | L | 20 | 4 |
@@ -77,6 +77,7 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E alerts |
 | Sun 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / PLANNED - STOPS SKIPPED: In Queens, Manhattan-bound [7] skips 111 St, 103 St, 90 St and 82 St All trains at Junction Blvd board from the Flushing-bound platform / PLANNED - STOPS SKIPPED: In Queens, Flushing-bound [7] skips 52 St and 69 St All trains at Woodside-61 St board from the Manhattan-bound platform |
 | Sun 17:04 | Q Atlantic Av-Barclays Ctr to Canal St 17:05 | Atlantic Av-Barclays Ctr to Canal St, Q in 6 mins / no Q alerts |
 | Sun 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 6 mins / PLANNED - STOPS SKIPPED: In Manhattan, downtown [1] and [2] local skip 86 St, 79 St, 66 St-Lincoln Center, 59 St-Columbus Circle and 50 St / PLANNED - STOPS SKIPPED: Downtown [1] skips 125 St / REDUCED SERVICE: [1] runs every 8 minutes |
@@ -96,4 +97,3 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 | Sun 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 8 mins / no N delays reported |
 | Sun 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 5 mins / no E delays reported |
 | Sun 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 12 mins / DELAYS: Uptown [A] trains are running with delays while we address a signal problem near 88 St. |
-| Sun 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
