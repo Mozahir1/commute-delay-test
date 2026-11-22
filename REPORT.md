@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 22:44 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 23:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,13 +12,13 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 168 |
 | Checks that ran | 168 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **32 of 169 (19%)** |
+| **Checks with an MTA delay posted** | **33 of 170 (19%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 16 | 3 |
+| 1 | 17 | 4 |
 | 6 | 18 | 4 |
 | 7 | 17 | 2 |
 | A | 18 | 4 |
@@ -71,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Sat 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
 | Sat 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
@@ -90,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Sat 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 2 mins / no Q delays reported |
 | Sat 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 1 mins / REDUCED SERVICE: [6] runs every 8 minutes |
-| Sat 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
