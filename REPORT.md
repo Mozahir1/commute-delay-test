@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sun Nov 22 09:54 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 10:29 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 181 |
-| Checks that ran | 181 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 182 |
+| Checks that ran | 182 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **36 of 182 (20%)** |
+| **Checks with an MTA delay posted** | **36 of 183 (20%)** |
 
 ## By line
 
@@ -21,7 +21,7 @@ skipped stops, reduced service; planned work left out).
 | 1 | 18 | 5 |
 | 6 | 19 | 4 |
 | 7 | 18 | 2 |
-| A | 19 | 5 |
+| A | 20 | 5 |
 | E | 20 | 2 |
 | F | 13 | 7 |
 | G | 18 | 2 |
@@ -73,6 +73,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 1 mins / no A delays reported |
 | Sun 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Sun 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 5 mins / no E delays reported |
 | Sun 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
@@ -92,4 +93,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 3 mins / DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. |
 | Sat 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 7 mins / no G delays reported |
-| Sat 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 0 mins / no Q delays reported |
