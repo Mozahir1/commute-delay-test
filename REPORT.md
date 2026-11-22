@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sun Nov 22 12:29 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 13:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,17 +9,17 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 184 |
-| Checks that ran | 184 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 186 |
+| Checks that ran | 186 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **37 of 186 (20%)** |
+| **Checks with an MTA delay posted** | **38 of 187 (20%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 19 | 6 |
-| 6 | 19 | 4 |
+| 6 | 20 | 5 |
 | 7 | 19 | 2 |
 | A | 20 | 5 |
 | E | 20 | 2 |
@@ -73,6 +73,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 1 mins / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sun 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 4 mins / no 7 delays reported |
 | Sun 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 1 mins / no G delays reported |
 | Sun 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 14 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
@@ -92,4 +93,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
 | Sat 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
-| Sat 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
