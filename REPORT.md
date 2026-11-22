@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 20:39 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 21:19 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 164 |
-| Checks that ran | 164 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 165 |
+| Checks that ran | 165 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **31 of 165 (19%)** |
+| **Checks with an MTA delay posted** | **32 of 166 (19%)** |
 
 ## By line
 
@@ -21,7 +21,7 @@ skipped stops, reduced service; planned work left out).
 | 1 | 16 | 3 |
 | 6 | 17 | 4 |
 | 7 | 17 | 2 |
-| A | 17 | 3 |
+| A | 18 | 4 |
 | E | 17 | 2 |
 | F | 13 | 7 |
 | G | 17 | 2 |
@@ -36,7 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
-| Sat 18:34 | A | DELAYS: Downtown [A][C][D] trains are delayed while we investigate what caused a train's brakes to activate at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
+| Sat 18:34 | A | DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
 | Sat 16:29 | G | DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. | 277436 | Sat 14:37 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277436) |
 | Sat 13:39 | 6 | REDUCED SERVICE: [6] runs every 8 minutes | - | Fri 12:23 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B6%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
 | Sat 11:09 | 1 | REDUCED SERVICE: [1] runs every 8 minutes | - | Thu 11:29 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B1%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
@@ -71,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 3 mins / DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. |
 | Sat 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 7 mins / no G delays reported |
 | Sat 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 0 mins / no Q delays reported |
@@ -90,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Sat 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
 | Sat 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
-| Sat 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
