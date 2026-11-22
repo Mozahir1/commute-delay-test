@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 21:19 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 21:49 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,17 +9,17 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 165 |
-| Checks that ran | 165 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 166 |
+| Checks that ran | 166 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **32 of 166 (19%)** |
+| **Checks with an MTA delay posted** | **32 of 167 (19%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
 | 1 | 16 | 3 |
-| 6 | 17 | 4 |
+| 6 | 18 | 4 |
 | 7 | 17 | 2 |
 | A | 18 | 4 |
 | E | 17 | 2 |
@@ -71,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 21:49 | 6 86 St to Grand Central-42 St 21:50 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
 | Sat 21:19 | A 125 St to 59 St-Columbus Circle 21:20 | 125 St to 59 St-Columbus Circle, A in 3 mins / DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. |
 | Sat 20:39 | 7 74 St-Broadway to Grand Central-42 St 20:40 | 74 St-Broadway to Grand Central-42 St, 7 in 3 mins / no 7 delays reported |
 | Sat 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 7 mins / no G delays reported |
@@ -90,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / no 7 delays reported |
 | Sat 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 4 mins / no G delays reported |
 | Sat 11:09 | 1 96 St to Times Sq-42 St 11:10 | 96 St to Times Sq-42 St, 1 in 1 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
-| Sat 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
