@@ -1,6 +1,6 @@
 # Commute alert test
 
-Updated Sun Nov 22 17:03 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 17:04 NY time. First check Tue Nov 17 17:39.
 
 Each check records every MTA alert that could change the trip: delays, planned work and any other
 service change on the line. Early checks in this test recorded delays only.
@@ -12,7 +12,7 @@ service change on the line. Early checks in this test recorded delays only.
 | Checks expected so far | 190 |
 | Checks that ran | 190 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA alert posted** | **39 of 191 (20%)** |
+| **Checks with an MTA alert posted** | **39 of 192 (20%)** |
 
 ## By line
 
@@ -27,7 +27,7 @@ service change on the line. Early checks in this test recorded delays only.
 | G | 20 | 2 |
 | L | 20 | 4 |
 | N | 20 | 2 |
-| Q | 19 | 3 |
+| Q | 20 | 3 |
 
 ## Alerts seen
 
@@ -75,6 +75,7 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 17:04 | Q Atlantic Av-Barclays Ctr to Canal St 17:05 | Atlantic Av-Barclays Ctr to Canal St, Q in 6 mins / no Q alerts |
 | Sun 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 6 mins / PLANNED - STOPS SKIPPED: In Manhattan, downtown [1] and [2] local skip 86 St, 79 St, 66 St-Lincoln Center, 59 St-Columbus Circle and 50 St / PLANNED - STOPS SKIPPED: Downtown [1] skips 125 St / REDUCED SERVICE: [1] runs every 8 minutes |
 | Sun 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 0 mins / no G alerts |
 | Sun 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
@@ -94,4 +95,3 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 | Sun 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 12 mins / DELAYS: Uptown [A] trains are running with delays while we address a signal problem near 88 St. |
 | Sun 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Sun 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 19 mins / no G delays reported |
-| Sun 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 9 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
