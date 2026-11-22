@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 19:44 NY time. First check Tue Nov 17 17:39.
+Updated Sat Nov 21 20:09 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -12,7 +12,7 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 162 |
 | Checks that ran | 162 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **31 of 163 (19%)** |
+| **Checks with an MTA delay posted** | **31 of 164 (19%)** |
 
 ## By line
 
@@ -24,7 +24,7 @@ skipped stops, reduced service; planned work left out).
 | A | 17 | 3 |
 | E | 17 | 2 |
 | F | 13 | 7 |
-| G | 16 | 2 |
+| G | 17 | 2 |
 | L | 17 | 3 |
 | N | 17 | 2 |
 | Q | 17 | 3 |
@@ -71,6 +71,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sat 20:09 | G Court Sq to Metropolitan Av 20:10 | Court Sq to Metropolitan Av, G in 7 mins / no G delays reported |
 | Sat 19:44 | Q Atlantic Av-Barclays Ctr to Canal St 19:45 | Atlantic Av-Barclays Ctr to Canal St, Q in 0 mins / no Q delays reported |
 | Sat 19:04 | N Queensboro Plaza to Times Sq-42 St 19:05 | Queensboro Plaza to Times Sq-42 St, N in 4 mins / no N delays reported |
 | Sat 18:49 | L Bedford Av to 14 St-Union Sq 18:50 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
@@ -90,4 +91,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 10:29 | A 125 St to 59 St-Columbus Circle 10:30 | 125 St to 59 St-Columbus Circle, A in 6 mins / no A delays reported |
 | Sat 09:54 | L Bedford Av to 14 St-Union Sq 09:55 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Sat 08:44 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 08:45 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
-| Sat 08:34 | 6 86 St to Grand Central-42 St 08:35 | 86 St to Grand Central-42 St, 6 in 0 mins / no 6 delays reported |
