@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sun Nov 22 13:39 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 14:14 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 186 |
-| Checks that ran | 186 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 187 |
+| Checks that ran | 187 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **38 of 187 (20%)** |
+| **Checks with an MTA delay posted** | **38 of 188 (20%)** |
 
 ## By line
 
@@ -27,7 +27,7 @@ skipped stops, reduced service; planned work left out).
 | G | 19 | 2 |
 | L | 20 | 4 |
 | N | 19 | 2 |
-| Q | 18 | 3 |
+| Q | 19 | 3 |
 
 ## Delays seen
 
@@ -73,6 +73,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 6 mins / no Q delays reported |
 | Sun 13:39 | 6 86 St to Grand Central-42 St 13:40 | 86 St to Grand Central-42 St, 6 in 1 mins / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sun 12:29 | 7 74 St-Broadway to Grand Central-42 St 12:30 | 74 St-Broadway to Grand Central-42 St, 7 in 4 mins / no 7 delays reported |
 | Sun 12:04 | G Court Sq to Metropolitan Av 12:05 | Court Sq to Metropolitan Av, G in 1 mins / no G delays reported |
@@ -92,4 +93,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 5 mins / DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. |
 | Sat 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
-| Sat 22:14 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 22:15 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 1 mins / no E delays reported |
