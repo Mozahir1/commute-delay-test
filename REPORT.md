@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sun Nov 22 07:29 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 07:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 173 |
-| Checks that ran | 173 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 174 |
+| Checks that ran | 174 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **36 of 176 (20%)** |
+| **Checks with an MTA delay posted** | **36 of 177 (20%)** |
 
 ## By line
 
@@ -26,7 +26,7 @@ skipped stops, reduced service; planned work left out).
 | F | 13 | 7 |
 | G | 18 | 2 |
 | L | 19 | 4 |
-| N | 18 | 2 |
+| N | 19 | 2 |
 | Q | 17 | 3 |
 
 ## Delays seen
@@ -73,6 +73,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 8 mins / no N delays reported |
 | Sun 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 5 mins / no E delays reported |
 | Sun 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 12 mins / DELAYS: Uptown [A] trains are running with delays while we address a signal problem near 88 St. |
 | Sun 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
@@ -92,4 +93,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 2 mins / DELAYS: Downtown [A][C][D] trains are delayed while we investigate what caused a train's brakes to activate at 59 St-Columbus Circle. |
 | Sat 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 0 mins / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sat 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 7 mins / no E delays reported |
-| Sat 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 4 mins / no 7 delays reported |
