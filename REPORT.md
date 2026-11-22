@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sat Nov 21 23:39 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 06:39 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,16 +9,16 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 170 |
-| Checks that ran | 170 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 171 |
+| Checks that ran | 171 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **34 of 171 (20%)** |
+| **Checks with an MTA delay posted** | **35 of 172 (20%)** |
 
 ## By line
 
 | Line | Checks | With a delay posted |
 |---|---|---|
-| 1 | 17 | 4 |
+| 1 | 18 | 5 |
 | 6 | 18 | 4 |
 | 7 | 17 | 2 |
 | A | 18 | 4 |
@@ -72,6 +72,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 9 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 23:39 | L Bedford Av to 14 St-Union Sq 23:40 | Bedford Av to 14 St-Union Sq, L in 5 mins / DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. |
 | Sat 23:04 | 1 96 St to Times Sq-42 St 23:05 | 96 St to Times Sq-42 St, 1 in 7 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
 | Sat 22:44 | N Queensboro Plaza to Times Sq-42 St 22:45 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
@@ -91,4 +92,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 0 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
 | Sat 16:29 | G Court Sq to Metropolitan Av 16:30 | Court Sq to Metropolitan Av, G in 3 mins / DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. |
 | Sat 15:19 | N Queensboro Plaza to Times Sq-42 St 15:20 | Queensboro Plaza to Times Sq-42 St, N in 1 mins / no N delays reported |
-| Sat 14:14 | Q Atlantic Av-Barclays Ctr to Canal St 14:15 | Atlantic Av-Barclays Ctr to Canal St, Q in 2 mins / no Q delays reported |
