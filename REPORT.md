@@ -1,6 +1,6 @@
 # Commute alert test
 
-Updated Sun Nov 22 18:05 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 18:34 NY time. First check Tue Nov 17 17:39.
 
 Each check records every MTA alert that could change the trip: delays, planned work and any other
 service change on the line. Early checks in this test recorded delays only.
@@ -9,10 +9,10 @@ service change on the line. Early checks in this test recorded delays only.
 
 | | Count |
 |---|---|
-| Checks expected so far | 193 |
-| Checks that ran | 193 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 195 |
+| Checks that ran | 195 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA alert posted** | **41 of 195 (21%)** |
+| **Checks with an MTA alert posted** | **42 of 196 (21%)** |
 
 ## By line
 
@@ -21,7 +21,7 @@ service change on the line. Early checks in this test recorded delays only.
 | 1 | 20 | 7 |
 | 6 | 21 | 6 |
 | 7 | 20 | 3 |
-| A | 20 | 5 |
+| A | 21 | 6 |
 | E | 21 | 2 |
 | F | 13 | 7 |
 | G | 20 | 2 |
@@ -36,6 +36,12 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Sun 18:34 | A | DELAYS: [A] trains are running with delays in both directions after we addressed a switch problem at 168 St. | 277526 | Sun 17:02 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277526) |
+| Sun 18:34 | A | PLANNED - PART SUSPENDED: In Upper Manhattan, no [A] between 168 St and 207 St | - | Fri 13:58 | - |
+| Sun 18:34 | A | PLANNED - REROUTE: In Brooklyn and Lower Manhattan, no Inwood-bound [A] at High St, Fulton St, Chambers St, Canal St and Spring St | - | Thu 14:18 | - |
+| Sun 18:34 | A | PLANNED - EXPRESS TO LOCAL: In Manhattan, downtown [A] stops at 50 St, 23 St and Spring St | - | Fri 09:34 | - |
+| Sun 18:34 | A | PLANNED - EXPRESS TO LOCAL: In Upper Manhattan, [A] stops in both directions at 155 St and 163 St-Amsterdam Av | - | Fri 14:04 | - |
+| Sun 18:34 | A | PLANNED - EXPRESS TO LOCAL: In Manhattan, uptown [A] stops at 23 St and 50 St | - | Thu 14:20 | - |
 | Sun 17:54 | 6 | PLANNED - STOPS SKIPPED: In Manhattan, downtown [4][5][6] skip 86 St | - | Fri 09:43 | - |
 | Sun 17:54 | 6 | PLANNED - STOPS SKIPPED: In Manhattan, downtown [4] local and [6] skip 116 St, 110 St, 103 St, 96 St, 77 St, 68 St and 51 St | - | Fri 13:57 | - |
 | Sun 17:24 | 7 | PLANNED - STOPS SKIPPED: In Queens, Manhattan-bound [7] skips 111 St, 103 St, 90 St and 82 St All trains at Junction Blvd board from the Flushing-bound platform | - | Fri 11:04 | - |
@@ -79,6 +85,7 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 18:34 | A 125 St to 59 St-Columbus Circle 18:35 | 125 St to 59 St-Columbus Circle, A in 4 mins / DELAYS: [A] trains are running with delays in both directions after we addressed a switch problem at 168 St. / PLANNED - PART SUSPENDED: In Upper Manhattan, no [A] between 168 St and 207 St / PLANNED - REROUTE: In Brooklyn and Lower Manhattan, no Inwood-bound [A] at High St, Fulton St, Chambers St, Canal St and Spring St / PLANNED - EXPRESS TO LOCAL: In Manhattan, downtown [A] stops at 50 St, 23 St and Spring St / PLANNED - EXPRESS TO LOCAL: In Upper Manhattan, [A] stops in both directions at 155 St and 163 St-Amsterdam Av / PLANNED - EXPRESS TO LOCAL: In Manhattan, uptown [A] stops at 23 St and 50 St |
 | Sun 17:54 | 6 86 St to Grand Central-42 St 17:55 | 86 St to Grand Central-42 St, 6 in 1 mins / PLANNED - STOPS SKIPPED: In Manhattan, downtown [4][5][6] skip 86 St / PLANNED - STOPS SKIPPED: In Manhattan, downtown [4] local and [6] skip 116 St, 110 St, 103 St, 96 St, 77 St, 68 St and 51 St / REDUCED SERVICE: [6] runs every 8 minutes |
 | Sun 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 2 mins / no E alerts |
 | Sun 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 1 mins / PLANNED - STOPS SKIPPED: In Queens, Manhattan-bound [7] skips 111 St, 103 St, 90 St and 82 St All trains at Junction Blvd board from the Flushing-bound platform / PLANNED - STOPS SKIPPED: In Queens, Flushing-bound [7] skips 52 St and 69 St All trains at Woodside-61 St board from the Manhattan-bound platform |
@@ -98,4 +105,3 @@ archive (months behind). [MTA Service Status](https://www.mta.info/) shows an al
 | Sun 08:19 | Q Atlantic Av-Barclays Ctr to Canal St 08:20 | Atlantic Av-Barclays Ctr to Canal St, Q in 11 mins / no Q delays reported |
 | Sun 07:49 | 7 74 St-Broadway to Grand Central-42 St 07:50 | 74 St-Broadway to Grand Central-42 St, 7 in 5 mins / no 7 delays reported |
 | Sun 07:39 | N Queensboro Plaza to Times Sq-42 St 07:40 | Queensboro Plaza to Times Sq-42 St, N in 8 mins / no N delays reported |
-| Sun 07:29 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 07:30 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 5 mins / no E delays reported |
