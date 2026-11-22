@@ -92,8 +92,9 @@ def commute_alerts(ev, now):  # MTA alerts that could change this trip, in the M
             continue
         early = mercury.get("display_before_active", 0)  # the MTA shows planned work shortly before it starts
         periods = a.get("active_period", [])
-        if periods and not any(int(p.get("start", 0)) - early <= ts and (not p.get("end") or ts <= int(p["end"]))
-                               for p in periods):
+        starts = [int(p.get("start", 0)) for p in periods
+                  if int(p.get("start", 0)) - early <= ts and (not p.get("end") or ts <= int(p["end"]))]
+        if periods and not starts:
             continue
         kind = mercury.get("alert_type", "")
         stations = {ie["stop_id"].rstrip("NS") for ie in informed if ie.get("stop_id")}
@@ -104,7 +105,7 @@ def commute_alerts(ev, now):  # MTA alerts that could change this trip, in the M
         text = next((t["text"] for t in a["header_text"]["translation"] if t["language"] == "en"), "")
         parts = ent["id"].split(":")  # "lmm:alert:277048:26" -> MTA event id 277048 (as in the official archive)
         found.append({"id": ent["id"], "event_id": parts[2] if parts[:2] == ["lmm", "alert"] else None,
-                      "kind": kind, "text": " ".join(text.split()), "rank": rank,
+                      "kind": kind, "text": " ".join(text.split()), "rank": rank, "start": min(starts, default=0),
                       "created_at": mercury.get("created_at"), "updated_at": mercury.get("updated_at")})
     return sorted(found, key=lambda alert: -alert["rank"])
 
@@ -129,18 +130,24 @@ def check(ev, now):  # returns (message, alerts); either lookup can fail without
     return f"{train} | {status}", alerts
 
 
-def notify(ev, message, alerts):  # phone notification, only when something could change the trip
-    if not alerts or not NTFY_TOPIC:
-        return
-    more = f" +{len(alerts) - 1} more" if len(alerts) > 1 else ""
+def push(title, text):  # sends one phone notification; returns whether ntfy accepted it
     body = {"topic": NTFY_TOPIC, "click": "https://www.mta.info/",  # tap to verify: the Service Status box
-            "title": f"{ev['line']} train: {alerts[0]['kind']}{more} ({ev['start'][0]:02}:{ev['start'][1]:02} event)",
-            "message": "\n\n".join([message.split(" | ")[0]] + [f"{a['kind']}: {a['text']}" for a in alerts])[:3500]}
+            "title": title, "message": text[:3500]}
     try:  # the topic goes in the body, not the URL, so it can't show up in an error or a public log
         urllib.request.urlopen(urllib.request.Request("https://ntfy.sh", json.dumps(body).encode()), timeout=10).close()
         print("  phone notification sent", flush=True)
+        return True
     except Exception as e:
         print(f"  phone notification failed ({e})", flush=True)
+        return False
+
+
+def notify(ev, message, alerts):  # the notification for one event's check
+    if not alerts or not NTFY_TOPIC:
+        return
+    more = f" +{len(alerts) - 1} more" if len(alerts) > 1 else ""
+    push(f"{ev['line']} train: {alerts[0]['kind']}{more} ({ev['start'][0]:02}:{ev['start'][1]:02} event)",
+         "\n\n".join([message.split(" | ")[0]] + [f"{a['kind']}: {a['text']}" for a in alerts]))
 
 
 def checker():

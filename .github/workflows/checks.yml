@@ -1,7 +1,7 @@
 name: Delay checks
 
-# One run watches the events for about 5.5 hours (checking every 30 seconds), then starts the
-# next run, so checks happen on time. The hourly schedule is only a backup that restarts the
+# One run watches the lines and events for about 5.5 hours (checking every 30 seconds), then starts
+# the next run, so alerts and checks happen on time. The hourly schedule is only a backup that restarts the
 # chain if a run ever fails to start the next one; extra runs wait their turn and never overlap.
 on:
   schedule:
@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main  # always the newest results: a queued run would otherwise start from old ones and repeat alerts
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
