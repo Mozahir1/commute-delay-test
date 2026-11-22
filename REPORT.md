@@ -1,9 +1,9 @@
-# Delay check test
+# Commute alert test
 
-Updated Sun Nov 22 15:19 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 15:24 NY time. First check Tue Nov 17 17:39.
 
-Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
-skipped stops, reduced service; planned work left out).
+Each check records every MTA alert that could change the trip: delays, planned work and any other
+service change on the line. Early checks in this test recorded delays only.
 
 ## Did the checks run?
 
@@ -12,11 +12,11 @@ skipped stops, reduced service; planned work left out).
 | Checks expected so far | 188 |
 | Checks that ran | 188 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **38 of 189 (20%)** |
+| **Checks with an MTA alert posted** | **38 of 189 (20%)** |
 
 ## By line
 
-| Line | Checks | With a delay posted |
+| Line | Checks | With an alert posted |
 |---|---|---|
 | 1 | 19 | 6 |
 | 6 | 20 | 5 |
@@ -29,10 +29,10 @@ skipped stops, reduced service; planned work left out).
 | N | 20 | 2 |
 | Q | 19 | 3 |
 
-## Delays seen
+## Alerts seen
 
 Proof: [official MTA log](https://data.ny.gov/d/7kct-peq7) links fill in once the MTA publishes the
-archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an alert only while it's active.
+archive (months behind). [MTA Service Status](https://www.mta.info/) shows an alert only while it's active.
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
@@ -40,9 +40,9 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 23:39 | L | DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. | 277469 | Sat 22:58 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277469) |
 | Sat 18:34 | A | DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
 | Sat 16:29 | G | DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. | 277436 | Sat 14:37 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277436) |
-| Sat 13:39 | 6 | REDUCED SERVICE: [6] runs every 8 minutes | - | Fri 12:23 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B6%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
-| Sat 11:09 | 1 | REDUCED SERVICE: [1] runs every 8 minutes | - | Thu 11:29 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27%5B1%5D+runs+every+8+minutes%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
-| Sat 06:39 | 1 | INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl | - | Thu 10:31 | [search by text](https://data.ny.gov/resource/7kct-peq7.json?%24where=starts_with%28header%2C+%27Downtown+%5B1%5D+trains+are+stopping+at+116+St-Columbia+University%2C+Cathedral+Pkwy-1%27%29+AND+date+between+%272026-11-20T00%3A00%3A00%27+and+%272026-11-22T23%3A59%3A59%27) |
+| Sat 13:39 | 6 | REDUCED SERVICE: [6] runs every 8 minutes | - | Fri 12:23 | - |
+| Sat 11:09 | 1 | REDUCED SERVICE: [1] runs every 8 minutes | - | Thu 11:29 | - |
+| Sat 06:39 | 1 | INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl | - | Thu 10:31 | - |
 | Fri 22:44 | N | DELAYS: Downtown [N][R] trains are running with delays after we requested EMS for a person in need on a train at 57 St/7 Av. | 277367 | Fri 21:36 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277367) |
 | Fri 17:39 | E | DELAYS: [B][D][E] trains are running with delays in both directions. Downtown [C] are running with delays. | 277320 | Fri 15:23 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277320) |
 | Fri 16:29 | G | DELAYS: Uptown [F] and Court Sq-bound [G] trains are running with delays after we addressed a door problem on a train at Fort Hamilton Pkwy. | 277332 | Fri 16:18 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277332) |
