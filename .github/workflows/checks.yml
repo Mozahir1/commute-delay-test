@@ -28,6 +28,8 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Watch events for 5.5 hours
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

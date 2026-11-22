@@ -2,11 +2,15 @@
 
 Fill in events and press Start. One minute before each event, a background thread prints
 when the next train on that line leaves From heading to To, e.g. "Roosevelt to Lex 53rd, E in 4 mins".
+If the MTA has anything posted that could change the trip (delays, planned work, any other service
+change on the line), it also sends a phone notification through ntfy.sh to the topic in
+the NTFY_TOPIC environment variable. The topic works like a password, so keep it out of the code.
 """
 import csv
 import html
 import io
 import json
+import os
 import re
 import threading
 import time
@@ -28,7 +32,9 @@ FEEDS = {"": "1 2 3 4 5 6 6X 7 7X GS", "-ace": "A C E H", "-bdfm": "B D F FS FX 
          "-jz": "J Z", "-l": "L", "-nqrw": "N Q R W", "-si": "SI SS"}
 LINE_FEED = {line: FEED + suffix for suffix, lines in FEEDS.items() for line in lines.split()}
 ALERTS = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/camsys%2Fsubway-alerts.json"
-SKIP = ("Planned", "Station Notice", "Boarding Change", "Extra Service")  # alert types that aren't delays
+# every alert on the line counts, except these, which only count at the event's From or To station
+STATION_ONLY = ("Station Notice", "Information Outage")
+NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "").strip()
 events = []  # [{"name", "days", "start": (hh, mm), "from", "to", "line", "from_ids", "to_ids"}]
 
 
@@ -76,37 +82,65 @@ def next_train(ev, now):  # the MTA's live time for the next train from From tow
     return best
 
 
-def delay_alerts(line, now):  # active unplanned MTA alerts (delays, suspensions, reroutes...) for this line
+def commute_alerts(ev, now):  # MTA alerts that could change this trip, in the MTA's own order of severity
     found, ts = [], now.timestamp()
     for ent in fetch_alerts()["entity"]:
         a = ent["alert"]
-        mercury = a.get("transit_realtime.mercury_alert", {})
-        kind = mercury.get("alert_type", "")
-        if kind.startswith(SKIP) or not any(ie.get("route_id") == line for ie in a.get("informed_entity", [])):
+        mercury, informed = a.get("transit_realtime.mercury_alert", {}), a.get("informed_entity", [])
+        on_line = [ie for ie in informed if ie.get("route_id") == ev["line"]]
+        if not on_line:
             continue
+        early = mercury.get("display_before_active", 0)  # the MTA shows planned work shortly before it starts
         periods = a.get("active_period", [])
-        if periods and not any(int(p.get("start", 0)) <= ts and (not p.get("end") or ts <= int(p["end"])) for p in periods):
+        if periods and not any(int(p.get("start", 0)) - early <= ts and (not p.get("end") or ts <= int(p["end"]))
+                               for p in periods):
             continue
+        kind = mercury.get("alert_type", "")
+        stations = {ie["stop_id"].rstrip("NS") for ie in informed if ie.get("stop_id")}
+        if kind in STATION_ONLY and stations and not stations & (ev["from_ids"] | ev["to_ids"]):
+            continue
+        rank = max(int(ie.get("transit_realtime.mercury_entity_selector", {}).get("sort_order", "0").split(":")[-1])
+                   for ie in on_line)  # "MTASBWY:Q:26" -> 26; delays rank above planned work, then notices
         text = next((t["text"] for t in a["header_text"]["translation"] if t["language"] == "en"), "")
         parts = ent["id"].split(":")  # "lmm:alert:277048:26" -> MTA event id 277048 (as in the official archive)
         found.append({"id": ent["id"], "event_id": parts[2] if parts[:2] == ["lmm", "alert"] else None,
-                      "kind": kind, "text": " ".join(text.split()),
+                      "kind": kind, "text": " ".join(text.split()), "rank": rank,
                       "created_at": mercury.get("created_at"), "updated_at": mercury.get("updated_at")})
-    return found
+    return sorted(found, key=lambda alert: -alert["rank"])
 
 
-def delays(line, now):  # the same alerts as short lines of text
-    return [f"{a['kind'].upper()}: {a['text'][:150]}" for a in delay_alerts(line, now)]
+def as_text(alerts):  # the same alerts as short lines of text
+    return [f"{a['kind'].upper()}: {a['text'][:150]}" for a in alerts]
 
 
-def check(ev, now):
+def check(ev, now):  # returns (message, alerts); either lookup can fail without hiding the other
+    route = f"{ev['from']} to {ev['to']}"
     try:
-        ts, found = next_train(ev, now), delays(ev["line"], now)
+        ts = next_train(ev, now)
+        train = (f"{route}, {ev['line']} in {int(ts - now.timestamp()) // 60} mins" if ts
+                 else f"{route}, no {ev['line']} trains found")
     except Exception as e:  # keep the background thread alive if the MTA can't be reached
-        return f"couldn't reach the MTA ({e})"
-    train = (f"{ev['from']} to {ev['to']}, {ev['line']} in {int(ts - now.timestamp()) // 60} mins" if ts
-             else f"{ev['from']} to {ev['to']}, no {ev['line']} trains found")
-    return f"{train} | " + (" | ".join(found) if found else f"no {ev['line']} delays reported")
+        train = f"{route}, couldn't get the next train ({e})"
+    try:
+        alerts = commute_alerts(ev, now)
+        status = " | ".join(as_text(alerts)) or f"no {ev['line']} alerts"
+    except Exception as e:
+        alerts, status = [], f"couldn't check alerts ({e})"
+    return f"{train} | {status}", alerts
+
+
+def notify(ev, message, alerts):  # phone notification, only when something could change the trip
+    if not alerts or not NTFY_TOPIC:
+        return
+    more = f" +{len(alerts) - 1} more" if len(alerts) > 1 else ""
+    body = {"topic": NTFY_TOPIC, "click": "https://www.mta.info/",  # tap to verify: the Service Status box
+            "title": f"{ev['line']} train: {alerts[0]['kind']}{more} ({ev['start'][0]:02}:{ev['start'][1]:02} event)",
+            "message": "\n\n".join([message.split(" | ")[0]] + [f"{a['kind']}: {a['text']}" for a in alerts])[:3500]}
+    try:  # the topic goes in the body, not the URL, so it can't show up in an error or a public log
+        urllib.request.urlopen(urllib.request.Request("https://ntfy.sh", json.dumps(body).encode()), timeout=10).close()
+        print("  phone notification sent", flush=True)
+    except Exception as e:
+        print(f"  phone notification failed ({e})", flush=True)
 
 
 def checker():
@@ -120,7 +154,9 @@ def checker():
             key = (ev["name"], start)
             if start - timedelta(minutes=1) <= now < start and key not in fired:
                 fired.add(key)
-                print(f"{now:%Y-%m-%d %H:%M:%S} {ev['name']}: {check(ev, now)}", flush=True)
+                message, alerts = check(ev, now)
+                print(f"{now:%Y-%m-%d %H:%M:%S} {ev['name']}: {message}", flush=True)
+                notify(ev, message, alerts)
         time.sleep(5)
 
 
@@ -211,5 +247,6 @@ if __name__ == "__main__":
     print("Loading station names from the MTA...", flush=True)
     STATIONS = load_stations()
     threading.Thread(target=checker, daemon=True).start()
+    print(f"Phone notifications: {'on' if NTFY_TOPIC else 'off (NTFY_TOPIC is not set)'}", flush=True)
     print("Open http://localhost:8000", flush=True)
     HTTPServer(("127.0.0.1", 8000), Handler).serve_forever()

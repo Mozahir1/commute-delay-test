@@ -3,8 +3,8 @@
 Usage: python cloud_check.py [--minutes N]
 
 Checks every event in events.csv whose check time (1 minute before start) has passed in the last
-30 minutes and hasn't been checked yet, using the same functions as ui.py, and records the delays
-the MTA had posted for that line in results.jsonl.
+30 minutes and hasn't been checked yet, using the same functions as ui.py, and records the alerts
+the MTA had posted for that line in results.jsonl. Those alerts also go to the phone (see ui.notify).
 
 With --minutes N it keeps going for N minutes, looking every 30 seconds, and after each new check
 updates REPORT.md and pushes both files to GitHub. The workflow runs this for about 5.5 hours, then
@@ -35,9 +35,9 @@ def load_events():
 def check(ev, now, due):
     rec = {"event": ev["name"], "line": ev["line"], "due": due.isoformat(), "ran": now.isoformat(timespec="seconds")}
     try:
-        rec["alerts"] = ui.delays(ev["line"], now)
-        rec["alert_details"] = ui.delay_alerts(ev["line"], now)  # MTA ids and times, to match the official archive
-        rec["message"] = ui.check(ev, now)
+        rec["alert_details"] = ui.commute_alerts(ev, now)  # MTA ids and times, to match the official archive
+        rec["alerts"] = ui.as_text(rec["alert_details"])
+        rec["message"], _ = ui.check(ev, now)
     except Exception as e:  # record the failure and keep going with the other events
         rec["error"] = str(e)
     return rec
@@ -59,6 +59,7 @@ def check_due(events, records, done):  # runs every check that's due; returns ho
                 done.add(key)
                 count += 1
                 print(f"{now:%Y-%m-%d %H:%M:%S} {ev['name']}: {rec.get('message', rec.get('error'))}", flush=True)
+                ui.notify(ev, rec.get("message", ""), rec.get("alert_details", []))
     return count
 
 
@@ -81,6 +82,7 @@ def main():
     events = load_events()
     records = [json.loads(line) for line in open(RESULTS)] if os.path.exists(RESULTS) else []
     done = {(r["event"], r["due"]) for r in records}
+    print(f"Phone notifications: {'on' if ui.NTFY_TOPIC else 'off (NTFY_TOPIC is not set)'}", flush=True)
     print(f"{datetime.now(ui.TZ):%Y-%m-%d %H:%M:%S} watching {len(events)} events for {minutes:g} minutes", flush=True)
     while True:
         try:
