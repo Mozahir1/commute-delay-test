@@ -1,6 +1,6 @@
 # Delay check test
 
-Updated Sun Nov 22 07:04 NY time. First check Tue Nov 17 17:39.
+Updated Sun Nov 22 07:14 NY time. First check Tue Nov 17 17:39.
 
 Each check records the delays the MTA had posted for the line (delays, suspensions, reroutes,
 skipped stops, reduced service; planned work left out).
@@ -9,10 +9,10 @@ skipped stops, reduced service; planned work left out).
 
 | | Count |
 |---|---|
-| Checks expected so far | 171 |
-| Checks that ran | 171 (100%; the rest GitHub ran more than 30 min late or skipped) |
+| Checks expected so far | 172 |
+| Checks that ran | 172 (100%; the rest GitHub ran more than 30 min late or skipped) |
 | MTA unreachable | 0 |
-| **Checks with an MTA delay posted** | **35 of 174 (20%)** |
+| **Checks with an MTA delay posted** | **36 of 175 (21%)** |
 
 ## By line
 
@@ -21,7 +21,7 @@ skipped stops, reduced service; planned work left out).
 | 1 | 18 | 5 |
 | 6 | 18 | 4 |
 | 7 | 17 | 2 |
-| A | 18 | 4 |
+| A | 19 | 5 |
 | E | 18 | 2 |
 | F | 13 | 7 |
 | G | 18 | 2 |
@@ -36,6 +36,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | First seen | Line | MTA alert | MTA event id | Posted by MTA | Official log |
 |---|---|---|---|---|---|
+| Sun 07:14 | A | DELAYS: Uptown [A] trains are running with delays while we address a signal problem near 88 St. | 277493 | Sun 07:05 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277493) |
 | Sat 23:39 | L | DELAYS: Canarsie-Rockaway Pkwy-bound [L] trains are running with delays while we address a signal problem near Bushwick Av/Aberdeen St. | 277469 | Sat 22:58 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277469) |
 | Sat 18:34 | A | DELAYS: [A][C] trains are running with delays in both directions after we moved a train that had its brakes activated at 59 St-Columbus Circle. | 277450 | Sat 18:11 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277450) |
 | Sat 16:29 | G | DELAYS: [G] trains are running with delays in both directions while we address a switch problem at Court Sq. | 277436 | Sat 14:37 | [record](https://data.ny.gov/resource/7kct-peq7.json?event_id=277436) |
@@ -72,6 +73,7 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 
 | Ran | Event | Result |
 |---|---|---|
+| Sun 07:14 | A 125 St to 59 St-Columbus Circle 07:15 | 125 St to 59 St-Columbus Circle, A in 12 mins / DELAYS: Uptown [A] trains are running with delays while we address a signal problem near 88 St. |
 | Sun 07:04 | L Bedford Av to 14 St-Union Sq 07:05 | Bedford Av to 14 St-Union Sq, L in 1 mins / no L delays reported |
 | Sun 06:54 | G Court Sq to Metropolitan Av 06:55 | Court Sq to Metropolitan Av, G in 19 mins / no G delays reported |
 | Sun 06:39 | 1 96 St to Times Sq-42 St 06:40 | 96 St to Times Sq-42 St, 1 in 9 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl |
@@ -91,4 +93,3 @@ archive (months behind). [mta.info/alerts](https://www.mta.info/alerts) shows an
 | Sat 17:39 | E Jackson Hts-Roosevelt Av to Lexington Av/53 St 17:40 | Jackson Hts-Roosevelt Av to Lexington Av/53 St, E in 7 mins / no E delays reported |
 | Sat 17:24 | 7 74 St-Broadway to Grand Central-42 St 17:25 | 74 St-Broadway to Grand Central-42 St, 7 in 4 mins / no 7 delays reported |
 | Sat 17:04 | Q Atlantic Av-Barclays Ctr to Canal St 17:05 | Atlantic Av-Barclays Ctr to Canal St, Q in 6 mins / no Q delays reported |
-| Sat 16:54 | 1 96 St to Times Sq-42 St 16:55 | 96 St to Times Sq-42 St, 1 in 0 mins / INFORMATION OUTAGE: Downtown [1] trains are stopping at 116 St-Columbia University, Cathedral Pkwy-110 St, and 103 St, but real-time arrival information may be unavailabl / REDUCED SERVICE: [1] runs every 8 minutes |
