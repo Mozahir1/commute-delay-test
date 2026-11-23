@@ -18,165 +18,51 @@
     "lines": "R"
   },
   {
-    "name": "test",
-    "days": "Sun",
-    "time": "21:03",
-    "lines": "E"
-  },
-  {
-    "name": "test2",
-    "days": "Sun",
-    "time": "22:00",
-    "lines": "E"
-  },
-  {
-    "name": "test4",
+    "name": "testalpha",
     "days": "",
-    "time": "10:00",
-    "lines": "E"
+    "time": "08:00",
+    "lines": "A B C D E F G J L M N Q R W Z"
   },
   {
-    "name": "test5",
+    "name": "testnum",
     "days": "",
-    "time": "10:00",
-    "lines": "R"
+    "time": "08:00",
+    "lines": "1 2 3 4 5 6 7"
   },
   {
-    "name": "tes6",
+    "name": "testalpha",
     "days": "",
-    "time": "08:04",
-    "lines": "6"
+    "time": "13:00",
+    "lines": "A B C D E F G J L M N Q R W Z"
   },
   {
-    "name": "test7",
+    "name": "testnum",
     "days": "",
-    "time": "10:00",
-    "lines": "Q"
+    "time": "13:00",
+    "lines": "1 2 3 4 5 6 7"
   },
   {
-    "name": "test8",
+    "name": "testalpha",
     "days": "",
-    "time": "10:00",
-    "lines": "F"
+    "time": "18:00",
+    "lines": "A B C D E F G J L M N Q R W Z"
   },
   {
-    "name": "Test A",
+    "name": "testnum",
     "days": "",
-    "time": "20:25",
-    "lines": "A C E"
+    "time": "18:00",
+    "lines": "1 2 3 4 5 6 7"
   },
   {
-    "name": "Test 1",
-    "days": "",
-    "time": "20:30",
-    "lines": "1 2 3"
-  },
-  {
-    "name": "Test 4",
-    "days": "",
-    "time": "20:35",
-    "lines": "4 5 6"
-  },
-  {
-    "name": "Test 7",
-    "days": "",
-    "time": "20:40",
-    "lines": "7"
-  },
-  {
-    "name": "Test N",
-    "days": "",
-    "time": "20:45",
-    "lines": "N Q R W"
-  },
-  {
-    "name": "Test B",
+    "name": "testalpha",
     "days": "",
     "time": "20:50",
-    "lines": "B D F M"
+    "lines": "A B C D E F G J L M N Q R W Z"
   },
   {
-    "name": "Test L",
+    "name": "testnum",
     "days": "",
-    "time": "20:55",
-    "lines": "L"
-  },
-  {
-    "name": "Test G",
-    "days": "",
-    "time": "21:00",
-    "lines": "G"
-  },
-  {
-    "name": "Test J",
-    "days": "",
-    "time": "21:05",
-    "lines": "J Z"
-  },
-  {
-    "name": "Test S",
-    "days": "",
-    "time": "21:10",
-    "lines": "F R L"
-  },
-  {
-    "name": "Test 2",
-    "days": "",
-    "time": "21:15",
-    "lines": "2"
-  },
-  {
-    "name": "Test 5",
-    "days": "",
-    "time": "21:20",
-    "lines": "5"
-  },
-  {
-    "name": "Test D",
-    "days": "",
-    "time": "21:25",
-    "lines": "D"
-  },
-  {
-    "name": "Test M",
-    "days": "",
-    "time": "21:30",
-    "lines": "M"
-  },
-  {
-    "name": "Test Q",
-    "days": "",
-    "time": "21:35",
-    "lines": "Q"
-  },
-  {
-    "name": "Test W",
-    "days": "",
-    "time": "21:40",
-    "lines": "W"
-  },
-  {
-    "name": "Test C",
-    "days": "",
-    "time": "21:45",
-    "lines": "C"
-  },
-  {
-    "name": "Test 3",
-    "days": "",
-    "time": "21:50",
-    "lines": "3"
-  },
-  {
-    "name": "Test Z",
-    "days": "",
-    "time": "21:55",
-    "lines": "Z"
-  },
-  {
-    "name": "Test A2",
-    "days": "",
-    "time": "22:00",
-    "lines": "A"
+    "time": "20:50",
+    "lines": "1 2 3 4 5 6 7"
   }
 ]
