@@ -16,5 +16,17 @@
     "days": "Thu,Sat,Sun",
     "time": "13:00",
     "lines": "R"
+  },
+  {
+    "name": "test",
+    "days": "Sun",
+    "time": "21:03",
+    "lines": "E"
+  },
+  {
+    "name": "test2",
+    "days": "Sun",
+    "time": "22:00",
+    "lines": "E"
   }
 ]
