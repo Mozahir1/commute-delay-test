@@ -34,5 +34,11 @@
     "days": "",
     "time": "10:00",
     "lines": "E"
+  },
+  {
+    "name": "test5",
+    "days": "",
+    "time": "10:00",
+    "lines": "R"
   }
 ]
