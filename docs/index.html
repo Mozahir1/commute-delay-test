@@ -9,10 +9,18 @@
   body { font: 16px/1.4 system-ui, sans-serif; max-width: 760px; margin: 2em auto; padding: 0 16px; }
   table { border-collapse: collapse; width: 100%; }
   th, td { text-align: left; padding: 4px; }
-  input { width: 100%; box-sizing: border-box; padding: 6px; font: inherit; }
+  input, summary.pick { width: 100%; box-sizing: border-box; padding: 6px; font: inherit; }
+  input[type=checkbox] { width: auto; }
   button { font: inherit; padding: 6px 12px; }
   #status { min-height: 1.4em; }
-  details { margin-top: 2em; border-top: 1px solid var(--line); padding-top: 1em; }
+  #tokenBox { margin-top: 2em; border-top: 1px solid var(--line); padding-top: 1em; }
+  .days { position: relative; }
+  .days summary.pick { list-style: none; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .days summary.pick::after { content: " ▾"; float: right; }
+  .days > div { position: absolute; z-index: 1; background: Canvas; border: 1px solid var(--line); border-radius: 4px; padding: 6px; min-width: 11em; box-shadow: 0 4px 12px #0003; }
+  .days label { display: block; padding: 3px 2px; }
+  .days .presets { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 4px; }
+  .days .presets button { padding: 2px 6px; font-size: 14px; }
   @media (max-width: 560px) { thead { display: none; } tr { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); padding: 6px 0; } }
 </style>
 </head>
@@ -20,7 +28,7 @@
 <h1>Commute alerts</h1>
 <p>Your phone gets anything the MTA posts on an event's lines, 60, 30 and 10 minutes before it starts. Nothing posted, no notification.</p>
 <table>
-  <thead><tr><th>Event</th><th>Days</th><th>Time (24h, NY)</th><th>Lines</th><th></th></tr></thead>
+  <thead><tr><th>Event</th><th>Days</th><th>Time (NY)</th><th>Lines</th><th></th></tr></thead>
   <tbody id="rows"></tbody>
 </table>
 <p><button id="add">Add event</button> <button id="save">Save</button></p>
@@ -42,13 +50,49 @@ const store = { get: k => { try { return localStorage.getItem(k) || ""; } catch 
 token.value = store.get("token");
 document.getElementById("tokenBox").open = !token.value;
 
+function field(name, props) {
+  const input = Object.assign(document.createElement("input"), props);
+  input.dataset.field = name; input.setAttribute("aria-label", name);
+  return input;
+}
+
+function daysPicker(value) {  // dropdown of day checkboxes; blank value means every day
+  const box = Object.assign(document.createElement("details"), { className: "days" });
+  const summary = Object.assign(document.createElement("summary"), { className: "pick" });
+  summary.setAttribute("aria-label", "days");
+  const menu = document.createElement("div"), presets = Object.assign(document.createElement("div"), { className: "presets" });
+  const chosen = new Set(value ? value.split(",") : DAYS);
+  const boxes = DAYS.map(d => {
+    const check = Object.assign(document.createElement("input"), { type: "checkbox", value: d, checked: chosen.has(d) });
+    const label = document.createElement("label"); label.append(check, " ", d); menu.append(label);
+    return check;
+  });
+  const show = () => {
+    const on = boxes.filter(b => b.checked).map(b => b.value).join(",");
+    summary.textContent = { "Mon,Tue,Wed,Thu,Fri,Sat,Sun": "Every day", "Mon,Tue,Wed,Thu,Fri": "Weekdays", "Sat,Sun": "Weekends", "": "Pick days" }[on] || on.replaceAll(",", ", ");
+  };
+  for (const [name, set] of [["Every day", DAYS], ["Weekdays", DAYS.slice(0, 5)], ["Weekends", DAYS.slice(5)]]) {
+    presets.append(Object.assign(document.createElement("button"), { type: "button", textContent: name,
+      onclick: () => { boxes.forEach(b => b.checked = set.includes(b.value)); show(); } }));
+  }
+  menu.prepend(presets);
+  menu.onchange = show;
+  box.append(summary, menu);
+  box.read = () => boxes.filter(b => b.checked).map(b => b.value);
+  show();
+  return box;
+}
+
+document.addEventListener("click", e => {  // clicking anywhere else closes an open days menu
+  document.querySelectorAll("details.days[open]").forEach(d => d.contains(e.target) || (d.open = false));
+});
+
 function addRow(ev = {}) {
   const tr = document.createElement("tr");
-  for (const [field, hint] of [["name", "Sunday shift"], ["days", "Mon,Wed (blank = every day)"], ["time", "11:30"], ["lines", "E F"]]) {
-    const input = Object.assign(document.createElement("input"), { value: ev[field] || "", placeholder: hint });
-    input.dataset.field = field; input.setAttribute("aria-label", field);
-    tr.insertCell().append(input);
-  }
+  tr.insertCell().append(field("name", { value: ev.name || "", placeholder: "Sunday shift" }));
+  tr.insertCell().append(daysPicker(ev.days || ""));
+  tr.insertCell().append(field("time", { type: "time", value: ev.time || "" }));  // a scroller on phones
+  tr.insertCell().append(field("lines", { value: ev.lines || "", placeholder: "E F" }));
   const remove = Object.assign(document.createElement("button"), { textContent: "Remove", onclick: () => tr.remove() });
   tr.insertCell().append(remove);
   rows.append(tr);
@@ -57,14 +101,14 @@ function addRow(ev = {}) {
 function read() {  // the events in the boxes, or an error message
   const events = [];
   for (const tr of rows.rows) {
-    const ev = Object.fromEntries([...tr.querySelectorAll("input")].map(i => [i.dataset.field, i.value.trim()]));
+    const ev = Object.fromEntries([...tr.querySelectorAll("[data-field]")].map(i => [i.dataset.field, i.value.trim()]));
     if (!ev.name) continue;
-    const days = ev.days.split(/[\s,]+/).filter(Boolean).map(d => d.slice(0, 3).replace(/^./, c => c.toUpperCase()));
+    const days = tr.querySelector("details.days").read();
     const lines = ev.lines.toUpperCase().split(/[\s,]+/).filter(Boolean);
-    if (days.some(d => !DAYS.includes(d))) return `${ev.name}: days must be like Mon,Wed (blank = every day)`;
-    if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(ev.time)) return `${ev.name}: time must be 24h HH:MM, e.g. 18:00`;
+    if (!days.length) return `${ev.name}: pick at least one day`;
+    if (!/^\d\d:\d\d$/.test(ev.time)) return `${ev.name}: pick a time`;
     if (!lines.length || lines.some(l => !LINES.includes(l))) return `${ev.name}: lines must be like E F 7`;
-    events.push({ name: ev.name, days: days.join(","), time: ev.time.padStart(5, "0"), lines: lines.join(" ") });
+    events.push({ name: ev.name, days: days.length === 7 ? "" : days.join(","), time: ev.time, lines: lines.join(" ") });
   }
   return events;
 }
