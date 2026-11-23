@@ -10,5 +10,11 @@
     "days": "Mon,Tue,Wed,Thu",
     "time": "15:00",
     "lines": "6"
+  },
+  {
+    "name": "gym",
+    "days": "Thu,Sat,Sun",
+    "time": "13:00",
+    "lines": "R"
   }
 ]
