@@ -52,5 +52,11 @@
     "days": "",
     "time": "10:00",
     "lines": "Q"
+  },
+  {
+    "name": "test8",
+    "days": "",
+    "time": "10:00",
+    "lines": "F"
   }
 ]
