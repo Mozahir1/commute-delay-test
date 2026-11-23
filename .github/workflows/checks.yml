@@ -1,16 +1,16 @@
-name: Delay checks
+name: Commute alerts
 
-# One run watches the lines and events for about 5.5 hours (checking every 30 seconds), then starts
-# the next run, so alerts and checks happen on time. The hourly schedule is only a backup that restarts the
-# chain if a run ever fails to start the next one; extra runs wait their turn and never overlap.
+# One run checks the events for about 5.5 hours (looking every 30 seconds), then starts the next run.
+# The hourly schedule is only a backup that restarts the chain if a run ever fails to start the next
+# one; extra runs wait their turn and never overlap.
 on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write  # push results
-  actions: write   # start the next run
+  contents: read  # read events.json
+  actions: write  # start the next run
 
 concurrency:
   group: checks
@@ -23,19 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main  # always the newest results: a queued run would otherwise start from old ones and repeat alerts
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-      - run: pip install -r requirements.txt
-      - name: Watch events for 5.5 hours
+          ref: main
+      - name: Check events for 5.5 hours
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          python cloud_check.py --minutes 330
+        run: python3 check.py --minutes 330
       - name: Start the next run
         if: success() || failure()  # not when cancelled, so cancelling a run stops the chain
         env:

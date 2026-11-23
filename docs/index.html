@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commute alerts</title>
+<style>
+  :root { color-scheme: light dark; --line: #8884; }
+  body { font: 16px/1.4 system-ui, sans-serif; max-width: 760px; margin: 2em auto; padding: 0 16px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 4px; }
+  input { width: 100%; box-sizing: border-box; padding: 6px; font: inherit; }
+  button { font: inherit; padding: 6px 12px; }
+  #status { min-height: 1.4em; }
+  details { margin-top: 2em; border-top: 1px solid var(--line); padding-top: 1em; }
+  @media (max-width: 560px) { thead { display: none; } tr { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); padding: 6px 0; } }
+</style>
+</head>
+<body>
+<h1>Commute alerts</h1>
+<p>Your phone gets anything the MTA posts on an event's lines, 60, 30 and 10 minutes before it starts. Nothing posted, no notification.</p>
+<table>
+  <thead><tr><th>Event</th><th>Days</th><th>Time (24h, NY)</th><th>Lines</th><th></th></tr></thead>
+  <tbody id="rows"></tbody>
+</table>
+<p><button id="add">Add event</button> <button id="save">Save</button></p>
+<p id="status" role="status"></p>
+<details id="tokenBox">
+  <summary>GitHub token (needed to save)</summary>
+  <p>Create a <a href="https://github.com/settings/personal-access-tokens/new">fine-grained token</a> with access to only
+  <b>commute-delay-test</b> and <b>Contents: Read and write</b>. It's kept in this browser only.</p>
+  <input id="token" type="password" autocomplete="off" placeholder="github_pat_...">
+</details>
+<script>
+const FILE = "https://api.github.com/repos/Mozahir1/commute-delay-test/contents/events.json";
+const LINES = "1 2 3 4 5 6 7 A B C D E F G J L M N Q R W Z GS FS H SI".split(" ");
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const rows = document.getElementById("rows"), note = document.getElementById("status"), token = document.getElementById("token");
+let sha = null;
+const store = { get: k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } },
+                set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+token.value = store.get("token");
+document.getElementById("tokenBox").open = !token.value;
+
+function addRow(ev = {}) {
+  const tr = document.createElement("tr");
+  for (const [field, hint] of [["name", "Sunday shift"], ["days", "Mon,Wed (blank = every day)"], ["time", "11:30"], ["lines", "E F"]]) {
+    const input = Object.assign(document.createElement("input"), { value: ev[field] || "", placeholder: hint });
+    input.dataset.field = field; input.setAttribute("aria-label", field);
+    tr.insertCell().append(input);
+  }
+  const remove = Object.assign(document.createElement("button"), { textContent: "Remove", onclick: () => tr.remove() });
+  tr.insertCell().append(remove);
+  rows.append(tr);
+}
+
+function read() {  // the events in the boxes, or an error message
+  const events = [];
+  for (const tr of rows.rows) {
+    const ev = Object.fromEntries([...tr.querySelectorAll("input")].map(i => [i.dataset.field, i.value.trim()]));
+    if (!ev.name) continue;
+    const days = ev.days.split(/[\s,]+/).filter(Boolean).map(d => d.slice(0, 3).replace(/^./, c => c.toUpperCase()));
+    const lines = ev.lines.toUpperCase().split(/[\s,]+/).filter(Boolean);
+    if (days.some(d => !DAYS.includes(d))) return `${ev.name}: days must be like Mon,Wed (blank = every day)`;
+    if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(ev.time)) return `${ev.name}: time must be 24h HH:MM, e.g. 18:00`;
+    if (!lines.length || lines.some(l => !LINES.includes(l))) return `${ev.name}: lines must be like E F 7`;
+    events.push({ name: ev.name, days: days.join(","), time: ev.time.padStart(5, "0"), lines: lines.join(" ") });
+  }
+  return events;
+}
+
+const b64 = text => btoa(String.fromCharCode(...new TextEncoder().encode(text)));
+const unb64 = text => new TextDecoder().decode(Uint8Array.from(atob(text.replace(/\s/g, "")), c => c.charCodeAt(0)));
+
+async function load() {
+  note.textContent = "Loading…";
+  try {
+    const res = await fetch(FILE, { cache: "no-store" });
+    if (res.status === 404) { addRow(); note.textContent = "No events yet."; return; }
+    if (!res.ok) throw new Error(`GitHub said ${res.status}`);
+    const file = await res.json();
+    sha = file.sha;
+    const events = JSON.parse(unb64(file.content));
+    events.forEach(addRow);
+    if (!events.length) addRow();
+    note.textContent = `${events.length} event(s).`;
+  } catch (e) { addRow(); note.textContent = `Couldn't load events: ${e.message}`; }
+}
+
+document.getElementById("add").onclick = () => addRow();
+document.getElementById("save").onclick = async () => {
+  const events = read();
+  if (typeof events === "string") { note.textContent = `Not saved: ${events}`; return; }
+  if (!token.value.trim()) { document.getElementById("tokenBox").open = true; note.textContent = "Not saved: add a GitHub token first."; return; }
+  store.set("token", token.value.trim());
+  note.textContent = "Saving…";
+  try {
+    const res = await fetch(FILE, { method: "PUT", headers: { Authorization: `Bearer ${token.value.trim()}`, Accept: "application/vnd.github+json" },
+      body: JSON.stringify({ message: "Update events", content: b64(JSON.stringify(events, null, 2) + "\n"), ...(sha && { sha }) }) });
+    if (!res.ok) throw new Error(res.status === 401 || res.status === 403 ? "the token was refused" : res.status === 409 ? "the events changed elsewhere, reload the page" : `GitHub said ${res.status}`);
+    sha = (await res.json()).content.sha;
+    note.textContent = `Saved ${events.length} event(s). The checker picks them up within a minute.`;
+  } catch (e) { note.textContent = `Not saved: ${e.message}`; }
+};
+load();
+</script>
+</body>
+</html>
