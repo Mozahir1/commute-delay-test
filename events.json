@@ -4,5 +4,11 @@
     "days": "Sun",
     "time": "11:30",
     "lines": "E"
+  },
+  {
+    "name": "school",
+    "days": "Mon,Tue,Wed,Thu",
+    "time": "15:00",
+    "lines": "6"
   }
 ]
